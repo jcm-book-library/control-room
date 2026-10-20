@@ -1,0 +1,473 @@
+{
+ "generated_at": "2026-10-19T03:02:13Z",
+ "org": "jcm-book-library",
+ "repos": [
+  {
+   "name": "my-book-library",
+   "html_url": "https://github.com/jcm-book-library/my-book-library",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-10-17T03:02:13Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "abc1234",
+    "date": "2026-10-17T03:02:13Z",
+    "message": "Update things"
+   },
+   "charter": {
+    "name": "Jackets & Manuscripts",
+    "repo": "my-book-library",
+    "purpose": "Track every book I own, read and want.",
+    "family": "Entertainment",
+    "stage": "Live",
+    "live": "https://jcm-book-library.github.io/my-book-library/",
+    "tags": [
+     "media-tracker"
+    ],
+    "updated": "2026-10-15"
+   },
+   "latest_run": {
+    "name": "Collect repo data and publish",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/my-book-library/actions/runs/1",
+    "created_at": "2026-10-17T03:02:13Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/my-book-library/",
+    "build_type": "workflow",
+    "source": null
+   },
+   "pull_requests": {
+    "count": 1,
+    "items": [
+     {
+      "title": "Change 0",
+      "html_url": "https://github.com/jcm-book-library/my-book-library/pull/1"
+     }
+    ]
+   },
+   "health": [],
+   "days_quiet": 2,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "tv-tracker",
+   "html_url": "https://github.com/jcm-book-library/tv-tracker",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-10-16T03:02:13Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "abc1234",
+    "date": "2026-10-16T03:02:13Z",
+    "message": "Update things"
+   },
+   "charter": {
+    "name": "TV Tracker",
+    "repo": "tv-tracker",
+    "purpose": "Shows I'm watching and what's next.",
+    "family": "Entertainment",
+    "stage": "Live",
+    "live": "https://jcm-book-library.github.io/tv-tracker/",
+    "tags": [
+     "media-tracker"
+    ],
+    "updated": "2026-10-15"
+   },
+   "latest_run": {
+    "name": "Collect repo data and publish",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/tv-tracker/actions/runs/1",
+    "created_at": "2026-10-16T03:02:13Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/tv-tracker/",
+    "build_type": "workflow",
+    "source": null
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 3,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "album-tracker",
+   "html_url": "https://github.com/jcm-book-library/album-tracker",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-10-14T03:02:13Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "abc1234",
+    "date": "2026-10-14T03:02:13Z",
+    "message": "Update things"
+   },
+   "charter": {
+    "name": "Album Tracker",
+    "repo": "album-tracker",
+    "purpose": "Albums I've heard and want to hear.",
+    "family": "Entertainment",
+    "stage": "Building",
+    "live": null,
+    "tags": [
+     "media-tracker"
+    ],
+    "updated": "2026-10-15"
+   },
+   "latest_run": {
+    "name": "Collect repo data and publish",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/album-tracker/actions/runs/1",
+    "created_at": "2026-10-14T03:02:13Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/album-tracker/",
+    "build_type": "workflow",
+    "source": null
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 5,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "game-tracker",
+   "html_url": "https://github.com/jcm-book-library/game-tracker",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-10-15T03:02:13Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "abc1234",
+    "date": "2026-10-15T03:02:13Z",
+    "message": "Update things"
+   },
+   "charter": {
+    "name": "Game Tracker",
+    "repo": "game-tracker",
+    "purpose": "Games played, playing and waiting.",
+    "family": "Entertainment",
+    "stage": "Building",
+    "live": null,
+    "tags": [
+     "media-tracker"
+    ],
+    "updated": "2026-10-15"
+   },
+   "latest_run": {
+    "name": "Collect repo data and publish",
+    "status": "completed",
+    "conclusion": "failure",
+    "html_url": "https://github.com/jcm-book-library/game-tracker/actions/runs/1",
+    "created_at": "2026-10-15T03:02:13Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/game-tracker/",
+    "build_type": "workflow",
+    "source": null
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [
+    "Last run on main failed: Build site"
+   ],
+   "days_quiet": 4,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "my-film-library",
+   "html_url": "https://github.com/jcm-book-library/my-film-library",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-10-13T03:02:13Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "abc1234",
+    "date": "2026-10-13T03:02:13Z",
+    "message": "Update things"
+   },
+   "charter": {
+    "name": "Film Library",
+    "repo": "my-film-library",
+    "purpose": "Films seen and on the watchlist.",
+    "family": "Entertainment",
+    "stage": "Live",
+    "live": "https://jcm-book-library.github.io/my-film-library/",
+    "tags": [
+     "media-tracker"
+    ],
+    "updated": "2026-10-15"
+   },
+   "latest_run": {
+    "name": "Collect repo data and publish",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/my-film-library/actions/runs/1",
+    "created_at": "2026-10-13T03:02:13Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/my-film-library/",
+    "build_type": "workflow",
+    "source": null
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 6,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "Pantry-Plate",
+   "html_url": "https://github.com/jcm-book-library/Pantry-Plate",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-10-10T03:02:13Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "abc1234",
+    "date": "2026-10-10T03:02:13Z",
+    "message": "Update things"
+   },
+   "charter": {
+    "name": "Pantry & Plate",
+    "repo": "Pantry-Plate",
+    "purpose": "Recipes, pantry stock and meal plans.",
+    "family": "Home",
+    "stage": "Live",
+    "live": "https://jcm-book-library.github.io/Pantry-Plate/",
+    "tags": [],
+    "updated": "2026-10-15"
+   },
+   "latest_run": {
+    "name": "Collect repo data and publish",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/Pantry-Plate/actions/runs/1",
+    "created_at": "2026-10-10T03:02:13Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/Pantry-Plate/",
+    "build_type": "workflow",
+    "source": null
+   },
+   "pull_requests": {
+    "count": 2,
+    "items": [
+     {
+      "title": "Change 0",
+      "html_url": "https://github.com/jcm-book-library/Pantry-Plate/pull/1"
+     },
+     {
+      "title": "Change 1",
+      "html_url": "https://github.com/jcm-book-library/Pantry-Plate/pull/2"
+     }
+    ]
+   },
+   "health": [],
+   "days_quiet": 9,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "sports-tracker",
+   "html_url": "https://github.com/jcm-book-library/sports-tracker",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-09-04T03:02:13Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "abc1234",
+    "date": "2026-09-04T03:02:13Z",
+    "message": "Update things"
+   },
+   "charter": {
+    "name": "Sports Tracker",
+    "repo": "sports-tracker",
+    "purpose": "Fixtures, results and logos for my teams.",
+    "family": "Hobby",
+    "stage": "Live",
+    "live": "https://jcm-book-library.github.io/sports-tracker/",
+    "tags": [],
+    "updated": "2026-10-15"
+   },
+   "latest_run": {
+    "name": "Collect repo data and publish",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/sports-tracker/actions/runs/1",
+    "created_at": "2026-09-04T03:02:13Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/sports-tracker/",
+    "build_type": "workflow",
+    "source": null
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 45,
+   "quiet": true,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "old-budget",
+   "html_url": "https://github.com/jcm-book-library/old-budget",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-06-21T03:02:13Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "abc1234",
+    "date": "2026-06-21T03:02:13Z",
+    "message": "Update things"
+   },
+   "charter": {
+    "name": "Old Budget",
+    "repo": "old-budget",
+    "purpose": "Early budget spreadsheet helper.",
+    "family": "Finance",
+    "stage": "Retired",
+    "live": null,
+    "tags": [],
+    "updated": "2026-10-15"
+   },
+   "latest_run": {
+    "name": "Collect repo data and publish",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/old-budget/actions/runs/1",
+    "created_at": "2026-06-21T03:02:13Z"
+   },
+   "pages": null,
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 120,
+   "quiet": true,
+   "dormant": true,
+   "charter_missing": false
+  },
+  {
+   "name": "scratch-pad",
+   "html_url": "https://github.com/jcm-book-library/scratch-pad",
+   "description": null,
+   "default_branch": "master",
+   "pushed_at": "2026-10-18T03:02:13Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": false,
+    "sha": null,
+    "date": null,
+    "message": null
+   },
+   "charter": null,
+   "latest_run": null,
+   "pages": null,
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [
+    "No main branch",
+    "Default branch is master, not main"
+   ],
+   "days_quiet": 1,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": true
+  },
+  {
+   "name": "recipe-ideas",
+   "html_url": "https://github.com/jcm-book-library/recipe-ideas",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-10-12T03:02:13Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "abc1234",
+    "date": "2026-10-12T03:02:13Z",
+    "message": "Update things"
+   },
+   "charter": null,
+   "latest_run": {
+    "name": "Collect repo data and publish",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/recipe-ideas/actions/runs/1",
+    "created_at": "2026-10-12T03:02:13Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/recipe-ideas/",
+    "build_type": "workflow",
+    "source": null
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 7,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": true
+  }
+ ],
+ "ideas": [
+  {
+   "repo": "my-book-library",
+   "title": "Show reading streak on the home screen",
+   "html_url": "https://github.com/jcm-book-library/my-book-library/issues/30",
+   "created_at": "2026-10-17T03:02:13Z"
+  },
+  {
+   "repo": "tv-tracker",
+   "title": "Remind me when a new season drops",
+   "html_url": "https://github.com/jcm-book-library/tv-tracker/issues/4",
+   "created_at": "2026-10-09T03:02:13Z"
+  },
+  {
+   "repo": "my-book-library",
+   "title": "Scan barcodes to add books",
+   "html_url": "https://github.com/jcm-book-library/my-book-library/issues/12",
+   "created_at": "2026-09-29T03:02:13Z"
+  }
+ ]
+}

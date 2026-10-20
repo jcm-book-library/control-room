@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Control Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#16141f; --surface:#1e1b2b; --raise:#2a2640; --line:#353050;
+  --fg:#f1effa; --muted:#a49fbf; --accent:#43ad8f; --accent-ink:#ffffff; --accent-2:#c4f04a;
+  --danger:#ff7a7a; --warn:#f0b44a; --ok:#43ad8f;
+  --display:"Atkinson Hyperlegible",ui-sans-serif,system-ui,sans-serif;
+  --body:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 var(--body);margin:0;overflow-wrap:anywhere}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 48px}
+h1,h2,h3{font-family:var(--display);margin:0}
+h1{font-size:clamp(26px,4vw,34px);letter-spacing:-.02em}
+h2{font-size:19px;letter-spacing:-.01em;margin:32px 0 12px}
+a{color:color-mix(in srgb,var(--accent) 70%,#fff)}
+.muted{color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+header .sub{color:var(--muted);margin-top:4px}
+.counts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.count{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px}
+.count b{font-family:var(--display)}
+.count.bad{border-color:var(--danger)}
+.notice{background:var(--raise);border:1px solid var(--line);border-left:3px solid var(--danger);padding:14px 16px;border-radius:8px;margin-top:20px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px 16px}
+.attn{list-style:none;margin:0;padding:0}
+.attn li{display:flex;gap:10px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line)}
+.attn li:last-child{border-bottom:0}
+.tag{flex:none;font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;padding:2px 8px;border-radius:999px}
+.tag.red{background:color-mix(in srgb,var(--danger) 22%,var(--surface));color:var(--danger)}
+.tag.amber{background:color-mix(in srgb,var(--warn) 22%,var(--surface));color:var(--warn)}
+.tag.grey{background:var(--raise);color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.tile{display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-height:120px;padding:16px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--fg);text-decoration:none}
+a.tile{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+a.tile:hover{background:color-mix(in srgb,var(--accent) 22%,var(--surface))}
+.tile .nm{font-family:var(--display);font-weight:700;font-size:20px;line-height:1.2}
+.tile .go{font-weight:700;color:var(--accent-ink);background:var(--accent);border-radius:8px;padding:10px 14px;text-align:center;font-size:16px}
+.tile.off{opacity:.75}
+.tile.off .go{background:var(--raise);color:var(--muted)}
+.chip{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--raise);border:1px solid var(--line);color:var(--muted)}
+.fam{margin-top:20px}
+.fam h3{font-size:14px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-bottom:10px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card .top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.card .nm{font-family:var(--display);font-weight:700;font-size:17px}
+.card .repo{font-size:13px}
+.card p{margin:0}
+.row{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);align-items:center}
+.hl{display:flex;gap:8px;align-items:flex-start;font-size:13px}
+.hd{width:10px;height:10px;border-radius:50%;flex:none;margin-top:6px;background:var(--ok)}
+.hd.amber{background:var(--warn)}.hd.red{background:var(--danger)}
+.open{align-self:flex-start;font-weight:700;text-decoration:none;background:var(--accent);color:var(--accent-ink);border-radius:8px;padding:8px 14px}
+.ideas h3{font-size:15px;margin:14px 0 4px}
+.ideas ul{margin:0;padding-left:20px}
+.ideas li{padding:3px 0}
+.note{color:var(--muted);font-size:14px;margin-top:12px}
+pre{white-space:pre-wrap;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;font:13px/1.55 var(--body);margin:0}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Control Room</h1>
+  <div class="sub" id="updated">Loading…</div>
+  <div class="counts" id="counts"></div>
+</header>
+<div id="error" class="notice" hidden></div>
+<main id="main" hidden>
+  <section id="s-attn" hidden><h2>Needs attention</h2><div class="panel"><ul class="attn" id="attn"></ul></div></section>
+  <section id="s-ent" hidden><h2>Entertainment</h2><div class="tiles" id="tiles"></div></section>
+  <section id="s-fam"><h2>Families</h2><div id="fams"></div></section>
+  <section id="s-ideas" class="ideas"><h2>Ideas</h2><div id="ideas"></div>
+    <p class="note">Add an idea: open any repo in the GitHub app → Issues → New issue → add the label idea.</p></section>
+  <section id="s-health" hidden><h2>Latest health check</h2><pre id="health"></pre></section>
+</main>
+</div>
+<script>
+(function(){
+'use strict';
+var FAMILIES=['Entertainment','Life','Home','Finance','Hobby','Learning','Admin'];
+var MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function $(id){return document.getElementById(id)}
+function el(tag,cls,text,attrs){
+  var e=document.createElement(tag);
+  if(cls)e.className=cls;
+  if(text!=null)e.textContent=text;
+  if(attrs)for(var k in attrs)e.setAttribute(k,attrs[k]);
+  return e;
+}
+function safeUrl(u){return typeof u==='string'&&/^https?:\/\//i.test(u)?u:null}
+function link(text,url,cls){
+  var u=safeUrl(url);
+  if(!u)return el('span',cls,text);
+  return el('a',cls,text,{href:u,target:'_blank',rel:'noopener'});
+}
+function plural(n,w){return n+' '+w+(n===1?'':'s')}
+function shortDate(d){return d.getDate()+' '+MONTHS[d.getMonth()]+' '+String(d.getFullYear()).slice(2)}
+function ago(iso,now){
+  var d=new Date(iso);if(isNaN(d))return null;
+  var s=Math.max(0,(now-d)/1000);
+  if(s<3600)return 'just now';
+  if(s<86400)return plural(Math.floor(s/3600),'hour')+' ago';
+  var days=Math.floor(s/86400);
+  if(days===1)return 'yesterday';
+  if(days<60)return days+' days ago';
+  if(days<365)return plural(Math.floor(days/30),'month')+' ago';
+  return plural(Math.floor(days/365),'year')+' ago';
+}
+function appName(r){return (r.charter&&r.charter.name)||r.name}
+function tags(r){return (r.charter&&Array.isArray(r.charter.tags))?r.charter.tags:[]}
+function liveUrl(r){return safeUrl(r.charter&&r.charter.live)}
+function showError(msg){
+  $('updated').textContent='';
+  var e=$('error');e.hidden=false;e.textContent=msg;
+}
+
+function render(data){
+  var now=new Date();
+  var repos=Array.isArray(data.repos)?data.repos:[];
+  var ideas=Array.isArray(data.ideas)?data.ideas:[];
+  var gen=new Date(data.generated_at);
+  $('updated').textContent=isNaN(gen)?'Update time unknown':'Updated '+ago(data.generated_at,now)+' ('+shortDate(gen)+')';
+
+  // Needs attention
+  var items=[];
+  repos.forEach(function(r){
+    (r.health||[]).forEach(function(h){items.push({r:r,kind:'red',tag:'Problem',text:h})});
+    if(r.charter_missing)items.push({r:r,kind:'amber',tag:'Setup',text:'No charter yet (project.json)'});
+    if(r.dormant)items.push({r:r,kind:'grey',tag:'Dormant',text:'Dormant: nothing for '+r.days_quiet+' days'});
+    else if(r.quiet)items.push({r:r,kind:'amber',tag:'Quiet',text:'Quiet for '+r.days_quiet+' days'});
+  });
+  var bad=repos.filter(function(r){return (r.health&&r.health.length)||r.charter_missing||r.quiet}).length;
+  var counts=$('counts');
+  [[repos.length,'repos',''],[bad,'needing attention',bad?'bad':''],[ideas.length,ideas.length===1?'idea':'ideas','']].forEach(function(c){
+    var s=el('span','count '+c[2]);s.appendChild(el('b',null,String(c[0])));s.appendChild(document.createTextNode(' '+c[1]));counts.appendChild(s);
+  });
+  if(items.length){
+    $('s-attn').hidden=false;
+    var ul=$('attn');
+    items.forEach(function(it){
+      var li=el('li');
+      li.appendChild(el('span','tag '+it.kind,it.tag));
+      li.appendChild(link(appName(it.r),it.r.html_url));
+      li.appendChild(el('span','muted',it.text));
+      ul.appendChild(li);
+    });
+  }
+
+  // Entertainment tiles
+  var media=repos.filter(function(r){return tags(r).indexOf('media-tracker')>=0});
+  if(media.length){
+    $('s-ent').hidden=false;
+    media.forEach(function(r){
+      var u=liveUrl(r);
+      var t=u?link('',u,'tile'):el('div','tile off');
+      if(u)t.setAttribute('aria-label','Open '+appName(r));
+      var top=el('div');
+      top.appendChild(el('div','nm',appName(r)));
+      var st=(r.charter&&r.charter.stage)||'';
+      if(st){var c=el('span','chip',st);c.style.marginTop='6px';top.appendChild(c)}
+      t.appendChild(top);
+      t.appendChild(el('div','go',u?'Open':'Not live yet'));
+      $('tiles').appendChild(t);
+    });
+  }
+
+  // Families
+  var groups={};
+  repos.forEach(function(r){
+    var f=(r.charter&&r.charter.family)||'No charter yet';
+    (groups[f]=groups[f]||[]).push(r);
+  });
+  var order=FAMILIES.filter(function(f){return groups[f]});
+  Object.keys(groups).filter(function(f){return FAMILIES.indexOf(f)<0&&f!=='No charter yet'}).sort().forEach(function(f){order.push(f)});
+  if(groups['No charter yet'])order.push('No charter yet');
+  var ideaCount={};
+  ideas.forEach(function(i){ideaCount[i.repo]=(ideaCount[i.repo]||0)+1});
+  order.forEach(function(f){
+    var sec=el('div','fam');
+    sec.appendChild(el('h3',null,f));
+    var grid=el('div','cards');
+    groups[f].sort(function(a,b){return appName(a).localeCompare(appName(b))}).forEach(function(r){
+      var c=el('div','card');
+      var top=el('div','top');
+      var l=el('div');
+      l.appendChild(el('div','nm',appName(r)));
+      l.appendChild(link(r.name,r.html_url,'repo'));
+      top.appendChild(l);
+      var stage=r.charter&&r.charter.stage;
+      if(stage)top.appendChild(el('span','chip',stage));
+      c.appendChild(top);
+      var purpose=(r.charter&&r.charter.purpose)||r.description;
+      if(purpose)c.appendChild(el('p',null,purpose));
+      var u=liveUrl(r);
+      if(u){var o=link('Open app',u,'open');c.appendChild(o)}
+      var row=el('div','row');
+      var when=ago(r.main&&r.main.date||r.pushed_at,now);
+      row.appendChild(el('span',null,'Last activity: '+(when||'unknown')));
+      var prs=r.pull_requests&&r.pull_requests.count;
+      if(prs)row.appendChild(link(plural(prs,'open pull request'),r.html_url+'/pulls'));
+      if(ideaCount[r.name])row.appendChild(el('span',null,plural(ideaCount[r.name],'idea')));
+      c.appendChild(row);
+      var kind='ok',why='All good';
+      if(r.health&&r.health.length){kind='red';why=r.health.join('. ')}
+      else if(r.dormant){kind='amber';why='Dormant: nothing for '+r.days_quiet+' days'}
+      else if(r.quiet){kind='amber';why='Quiet for '+r.days_quiet+' days'}
+      var h=el('div','hl');h.appendChild(el('span','hd '+(kind==='ok'?'':kind)));
+      h.appendChild(el('span',null,why));
+      c.appendChild(h);
+      grid.appendChild(c);
+    });
+    sec.appendChild(grid);
+    $('fams').appendChild(sec);
+  });
+
+  // Ideas
+  var byRepo={};
+  ideas.forEach(function(i){(byRepo[i.repo]=byRepo[i.repo]||[]).push(i)});
+  var box=$('ideas');
+  if(!ideas.length)box.appendChild(el('p','muted','No ideas yet.'));
+  Object.keys(byRepo).sort().forEach(function(name){
+    box.appendChild(el('h3',null,name));
+    var ul=el('ul');
+    byRepo[name].sort(function(a,b){return String(b.created_at).localeCompare(String(a.created_at))}).forEach(function(i){
+      var li=el('li');li.appendChild(link(i.title||'(no title)',i.html_url));
+      var w=ago(i.created_at,now);if(w)li.appendChild(el('span','muted',' · '+w));
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+  });
+  $('main').hidden=false;
+}
+
+function getJson(url){
+  return fetch(url,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json()});
+}
+getJson('data/repos.json').then(render).catch(function(){
+  showError("Couldn't load the repo data. The daily update may not have run yet. Try again in a few minutes, or open the Actions tab on GitHub to see if it failed.");
+});
+fetch('data/health-latest.md',{cache:'no-store'}).then(function(r){return r.ok?r.text():null}).then(function(t){
+  if(t&&t.trim()&&!/^\s*<!doctype|<html/i.test(t)){$('health').textContent=t;$('s-health').hidden=false;$('main').hidden=false}
+}).catch(function(){});
+})();
+</script>
+</body>
+</html>
