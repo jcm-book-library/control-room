@@ -1,6 +1,7 @@
 {
  "generated_at": "2026-10-19T03:02:13Z",
- "org": "jcm-book-library",
+ "owner": "jcm-book-library",
+ "owner_type": "user",
  "repos": [
   {
    "name": "my-book-library",
