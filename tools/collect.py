@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Collect public data about every repo in a GitHub org and write it as JSON.
+"""Collect public data about every repo owned by a GitHub account and write it as JSON.
+
+The owner can be a personal account or an organisation: the organisation endpoint is
+tried first and a 404 falls back to the user endpoint.
 
 Usage: python3 tools/collect.py [output_path] [--limit N]
-Env:   GITHUB_TOKEN (optional), ORG (default jcm-book-library)
-Python 3 standard library only. One failed call never fails the whole run.
+Env:   GITHUB_TOKEN (optional), OWNER (default jcm-book-library; ORG still accepted)
+Python 3 standard library only. One failed call never fails the whole run, but finding
+no repos at all writes an "error" field and exits non-zero so nothing empty gets published.
 """
 import argparse
 import base64
@@ -15,7 +19,7 @@ import urllib.request
 from datetime import datetime, timezone
 
 API = "https://api.github.com"
-ORG = os.environ.get("ORG", "jcm-book-library")
+OWNER = os.environ.get("OWNER") or os.environ.get("ORG") or "jcm-book-library"
 TOKEN = os.environ.get("GITHUB_TOKEN")
 LAST_STATUS = {"code": None}
 
@@ -53,17 +57,25 @@ def parse_date(s):
         return None
 
 
-def list_repos(org):
+def list_repos(owner):
+    """Return (repos, owner_type). owner_type is "org", "user" or None if neither endpoint worked."""
+    owner_type = "org"
+    path = "/orgs/%s/repos?per_page=100&type=all&page=%d"
     repos, page = [], 1
-    while True:
-        batch = api("/orgs/%s/repos?per_page=100&type=all&page=%d" % (org, page))
+    while page <= 20:
+        batch = api(path % (owner, page))
+        if batch is None and page == 1 and owner_type == "org" and LAST_STATUS["code"] == 404:
+            print("info: %s is not an organisation, trying it as a user account" % owner, file=sys.stderr)
+            owner_type = "user"
+            path = "/users/%s/repos?type=owner&per_page=100&page=%d"
+            continue
+        if batch is None and page == 1:
+            return [], None
         if not batch:
             break
         repos.extend(batch)
         page += 1
-        if page > 20:
-            break
-    return repos
+    return repos, owner_type
 
 
 def get_main(o, r):
@@ -117,8 +129,9 @@ def get_prs(o, r):
     return {"count": len(d), "items": [{"title": p.get("title"), "html_url": p.get("html_url")} for p in d]}
 
 
-def get_ideas(org):
-    d = api("/search/issues?q=org:%s+label:idea+is:issue+is:open&per_page=100" % org)
+def get_ideas(owner, owner_type):
+    qualifier = "user" if owner_type == "user" else "org"
+    d = api("/search/issues?q=%s:%s+label:idea+is:issue+is:open&per_page=100" % (qualifier, owner))
     out = []
     for i in (d or {}).get("items", []):
         repo = (i.get("repository_url") or "").rsplit("/", 1)[-1]
@@ -179,22 +192,36 @@ def main():
     args = ap.parse_args()
     now = datetime.now(timezone.utc)
 
-    raw = [r for r in list_repos(ORG) if not r.get("archived")]
+    listed, owner_type = list_repos(OWNER)
+    raw = [r for r in listed if not r.get("archived")]
     if args.limit:
         raw = raw[: args.limit]
     repos = []
     for r in raw:
         try:
-            repos.append(build_repo(ORG, r, now))
+            repos.append(build_repo(OWNER, r, now))
         except Exception as e:  # never let one repo sink the run
             print("warn: skipped %s: %s" % (r.get("name"), e), file=sys.stderr)
-    ideas = get_ideas(ORG)
+    ideas = get_ideas(OWNER, owner_type) if owner_type else []
 
-    out = {"generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "org": ORG, "repos": repos, "ideas": ideas}
+    out = {"generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "owner": OWNER, "owner_type": owner_type,
+           "repos": repos, "ideas": ideas}
+    error = None
+    if owner_type is None:
+        error = ("Couldn't list repos for %s: GitHub answered HTTP %s. A 404 means it isn't an "
+                 "organisation or a user account." % (OWNER, LAST_STATUS["code"] or "no response"))
+    elif not repos:
+        error = "No repos found for %s (checked as %s account). The collector found nothing to show." % (
+            OWNER, "an organisation" if owner_type == "org" else "a user")
+    if error:
+        out["error"] = error
     os.makedirs(os.path.dirname(os.path.abspath(args.output)), exist_ok=True)
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=1, ensure_ascii=False)
     print("wrote %s: %d repos, %d ideas" % (args.output, len(repos), len(ideas)))
+    if error:
+        print("error: " + error, file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

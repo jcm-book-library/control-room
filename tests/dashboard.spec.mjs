@@ -59,6 +59,17 @@ try {
     await page.screenshot({ path: path.join(shots, `control-room-${w}.png`), fullPage: true });
     await page.close();
   }
+  // collector reported an error (e.g. no repos found)
+  fs.writeFileSync(dataFile, JSON.stringify({ generated_at: '2026-10-19T03:02:13Z', owner: 'jcm-book-library', owner_type: 'user',
+    repos: [], ideas: [], error: 'No repos found for jcm-book-library (checked as a user account).' }));
+  {
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    await page.goto(`http://localhost:${port}/`);
+    await page.waitForSelector('#error:not([hidden])');
+    check('collector error shown', (await page.textContent('#error')).includes('No repos found for jcm-book-library'));
+    check('main hidden on collector error', !(await page.isVisible('#main')));
+    await page.close();
+  }
   // error state
   fs.unlinkSync(dataFile);
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
