@@ -14,10 +14,12 @@ The project is **paused**, so start there.
    - Nine tables, protection on, rows in them: carry on.
    - Tables there but no rows: the copy was never done. Step 4 does it.
    - Error saying the `brain` schema doesn't exist: run steps 1 to 3 of `supabase/SETUP.md` first.
-3. **Put the sign-in code in the email.** Authentication, **Email Templates**, **Magic link**. Under the link add `<p>Your sign-in code: <b>{{ .Token }}</b></p>` and **Save**. (This is what makes phone sign-in work.)
-4. **Laptop:** open The Brain, **Settings**, type your email, **Email me a sign-in link**, then type the code into the box. Click **Check Sheet and Supabase match**.
-   - If they differ and the Sheet is the up-to-date one: **Copy Sheet to Supabase**, then **Check** again. It should say they match on every tab.
-5. **Phone:** **Settings**, email, code, choose **Supabase** under *Where your data lives*, **Save & connect**.
+3. **Laptop, sign in and check.** Open The Brain, **Settings**, type your email, **Email me a sign-in link**, and click the link in the same browser. Then click **Check Sheet and Supabase match**.
+   - If it says they match on every tab, carry on.
+   - If Supabase shows 0 rows although step 2 found rows: the app is signed in but can't see them. Sign out of Supabase in Settings, sign in again with the link, and check again. If that doesn't fix it, tell Claude and share the result of `select tablename, policyname, roles::text, cmd from pg_policies where schemaname = 'brain'` (it should list nine "own rows" rules).
+   - If the Sheet is the newer one, switch **Where your data lives** to Google Sheet, then **Copy Sheet to Supabase** and check again. Never press **Copy Supabase to Sheet** while Supabase looks empty.
+4. **Laptop, set a password for your phone.** **Settings, New password, Set password.** Use 12 or more characters (a few random words) and keep it in a password manager.
+5. **Phone:** **Settings**, type your email and password, **Sign in with password**, choose **Supabase** under *Where your data lives*, **Save & connect**.
 6. **Tell Claude "switch over."** Supabase becomes the default on every device. The Sheet is kept as an archive and never written again without your go-ahead.
 
 Done once switch-over has happened and a week has passed with nothing missing: The Brain is finished, and the next app can start.
@@ -37,7 +39,7 @@ Done once switch-over has happened and a week has passed with nothing missing: T
 | Project | One: `jcm-apps`, Sydney region (created) | One sign-in, one bill, and The Brain can read across apps |
 | Tables | One schema per app: `brain` (built), then `tv`, `books`, `albums`, `games`, `films`, `pantry` … | Same "stay in your lane" rule as the sheet tabs today |
 | Shared | Schema `shared` holding the `activity` view (section 6) | The only place apps meet |
-| Sign-in | Supabase Auth: email link or code today; Google sign-in can be added later | Works now without Google Cloud steps |
+| Sign-in | Supabase Auth: email link, plus an email and password for phones; Google sign-in can be added later | Works now without Google Cloud steps |
 | Security | Row Level Security on every table: only your user id can read or write. Sign-ups switched off after your first sign-in | The public key in the app code is then safe in a public repo |
 | Plan | Free tier | Caveat: pauses after about a week without use (section 4) |
 
@@ -57,7 +59,7 @@ Each app moves the same way. **You** do the Supabase clicks; **Claude** does the
 8. **Switch over.** Supabase becomes the default on every device. The Sheet is kept as an archive.
 
 Lessons from the pilot:
-- **Phone home-screen apps** keep separate storage from the browser, so an emailed *link* signs in the wrong place. A typed *code* works. Every app should offer the code.
+- **Phone home-screen apps** keep separate storage from the browser, so an emailed *link* signs in the wrong place. A typed *password* works. (A typed *code* would too, but Supabase's built-in email can't be edited to include one unless your own email service is connected.) Every app should offer the password.
 - **A pilot that isn't the default doesn't get used**, so the project paused. Move quickly from "side by side" to "switched over".
 - **Tab headers live in row 1 of every Sheet tab**, so "Moved to Supabase" notes can't go in A1. Use a separate note tab, and only with your go-ahead.
 
