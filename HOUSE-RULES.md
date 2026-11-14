@@ -95,6 +95,7 @@ Every repo has one at its root. The Control Room dashboard reads it from `main`;
 - No email addresses, passwords, API keys, sheet links, personal figures or private photos in the repo.
 - Logos, photos and other private files live in the owner's Google Drive and load after Google sign-in.
 - If something private is found in a repo, tell the owner first; removing it from history needs their go-ahead.
+- Supabase: every app except Our Library (`books`, `family`) accepts only the owner's account. When an app moves to Supabase, add its schema to the list in `supabase/owner-only.sql` and have the owner run it (`plans/SUPABASE.md`, section 8). Never ask for the `service_role` key or the database password.
 
 ## 7. Ideas and the Control Room
 

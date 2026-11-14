@@ -1,6 +1,6 @@
 # Plan: moving the apps to Supabase
 
-Status: **The Brain is switched over and in daily use on Supabase. Books (The Library) is moving now.** Updated 8 Nov 2026 (first written 19 Oct 2026). Every other app is still on its Google Sheet.
+Status: **The Brain is switched over and in daily use on Supabase. Books (The Library) is moving now.** Updated 14 Nov 2026 (first written 19 Oct 2026). Every other app is still on its Google Sheet.
 
 ## Next steps for Books (in order)
 
@@ -35,6 +35,7 @@ Done once a week has passed with nothing missing. Then Albums can start.
 | Shared | Schema `shared` holding the `activity` view (section 6) | The only place apps meet |
 | Sign-in | Supabase Auth: email and password (works in phone home-screen apps), plus an email link for laptops. Sign-ups are off | Works without Google Cloud steps |
 | Security | Row Level Security on every table: only your user id can read or write. Signed-out visitors get nothing | The public key in the app code is then safe in a public repo |
+| Family accounts | Only Our Library (the `books` and `family` schemas) is open to family members. Every other app is locked to your account (section 8) | Family members are real accounts in the same Supabase Auth, so each private app has to refuse them itself |
 | Plan | Free tier | Caveat: pauses after about a week without use (section 4) |
 
 The house rules carry over: permanent ids, dates as real dates, no bulk rewrites from the app, a backup before any change of shape. Never put the `service_role` key or the database password in a chat, and Claude never asks for them.
@@ -45,7 +46,7 @@ Each app moves the same way. **You** do the Supabase clicks; **Claude** does the
 
 1. **Scan first.** Before writing the schema, Claude reads the app's tabs (read-only) and checks every column's real values: numbers stored as text (`1,116`), Yes/blank columns that are really true/false, mixed dates and words, duplicate ids. Types come from the data, not guesses.
 2. **Schema.** One numbered SQL file (`01-schema.sql`): one table per tab, column for column, plus `row_id`, `user_id` (filled in from whoever is signed in) and `updated_at`; Row Level Security on with an "own rows" rule; access for signed-in users only; live sync switched on in the same file. Formula columns are not stored: the app works them out. Claude tests the SQL on a local Postgres (including the security rules) and gives it to you **to paste inline**, not as a file name.
-3. **Expose the schema.** **You** add it to *Exposed schemas* in the Data API settings. Supabase doesn't do this automatically.
+3. **Expose the schema.** **You** add it to *Exposed schemas* in the Data API settings. Supabase doesn't do this automatically. Then **lock it to you**: add the schema name to `v_schemas` in `supabase/owner-only.sql` and run that file again (section 8). Its check at the bottom lists any app schema that is still open.
 4. **Data layer first.** If the app talks to the Sheet from many places (Books did, from about 45), gather them into one set of named operations before adding Supabase, and prove nothing changed by checking every recorded Sheet write is byte-identical. The Brain already had this shape.
 5. **Supabase mode beside the Sheets mode,** behind that data layer, so the screens never talk to either directly. It returns data in the same shape the Sheet does, so screen code doesn't change. Each device picks its source.
 6. **Copy and check.** One button copies Sheet to Supabase, then reads Supabase back and compares every row. It refuses if the Sheet has duplicate ids. A read-only **Check** button lists every tab with its row count in each place and what differs.
@@ -108,6 +109,19 @@ A view `shared.activity` stacks every app's log in one agreed layout:
 4. **TV Tracker**: cleanest id column and a 53-check smoke test, so a low-risk move.
 5. **Games and Films**, then the rest.
 
+## 8. Owner-only apps (before family members join)
+
+Family members will be real accounts in the same Supabase Auth (Our Library invites them). Every table already uses "own rows", so a member cannot see your rows in another app, but they could still sign in to, say, The Brain and create rows there. So every app except Our Library accepts only your account.
+
+- **How:** `supabase/owner-only.sql`. A small table `shared.owners` holds your user id (looked up from your email when you run it). A function `shared.is_owner()` says whether the signed-in user is in it. Every table in the schemas listed in the file's `v_schemas` gets a **restrictive** policy "owner only". A restrictive policy has to pass **as well as** the existing "own rows" policy, so access only ever gets narrower. The "own rows" policies are not touched.
+- **Never locked:** `books`, `family` and `shared`. Family members keep their own rows in books, and the `family.*` functions read across members. The script refuses to lock them.
+- **The email is a placeholder in the file** (`PUT-YOUR-EMAIL-HERE`, one place, marked EDIT) because this repo is public. Claude gives you the paste-ready SQL in chat with your email filled in.
+- **Run it** (you, about 2 minutes): SQL Editor, **New query**, paste, **Run**. Expect "Success. No rows returned". Then open The Brain, sign in, and confirm it loads and a quick edit saves. Safe to run again.
+- **When an app moves to Supabase:** add its schema to `v_schemas`, run the file again. The check at the bottom lists any app table without the lock and any view that skips it (a view needs `security_invoker = true`, as `shared.activity` has).
+- **One-line check** (reads only): `select (select count(*) from shared.owners) as owners, (select count(*) from pg_policy where polname = 'owner only') as locked_tables;` Expect owners = 1 and locked_tables = the number of tables across the listed schemas (9 for The Brain alone).
+- **Undo:** the block in the file's header comment drops every "owner only" policy.
+- **Tested** on a local Postgres with a stand-in for Supabase's sign-in: `tests/sql/owner-only.sh` (94 checks). Owner, family member, outsider and signed-out visitor, before and after; Books and family results are identical before and after. Not tested locally: Supabase Realtime (live sync) under the new policy, so check The Brain saves and updates after running it.
+
 ## Decisions
 
 - [x] One Supabase project (free tier) under your account: `jcm-apps`.
@@ -117,5 +131,7 @@ A view `shared.activity` stacks every app's log in one agreed layout:
 - [x] `shared.activity` created with Books; The Brain reads it in a later pull request.
 - [x] Weekly backup: the Copy Supabase → Sheet button; the GitHub Action export is deferred.
 - [x] Books' claude.ai artifact: frozen read-only.
+- [x] Every app except Our Library is owner-only: `supabase/owner-only.sql`; each new app's schema is added to its list as it moves (section 8).
+- [ ] Run `supabase/owner-only.sql` in Supabase before the first family member signs in (trial planned about 27 Nov 2026).
 - [ ] Keep-awake ping from the daily Control Room run: only if it pauses again.
 - [ ] "Switch over" for Books: say it once the copy says Supabase matches your Sheet.
