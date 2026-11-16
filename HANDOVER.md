@@ -22,17 +22,15 @@ Last rewritten: 16 Nov 2026. Rewrite this file at the end of each session; don't
 1. Owner reads and merges PR #6. D1 (Roboto for all new and rebuilt apps), D6 (separate sign-in for Our Library) and D9 (`main` in three repos) are decided; D2 to D5, D7 and D8 take the recommendations unless the owner says otherwise.
 2. **D9:** `main` was created from the session branch in `travel-app` and `travel-planner` on 16 Nov 2026 (`shopping-list` already had one, with two newer commits still on its session branch). The owner still switches each of the three repos' default branch to `main` in GitHub settings, and turns on Pages from `main` where an app is live.
 3. **Weekly health check:** Mondays 7:55am Melbourne (cron is UTC), a fresh session on a cheaper model, writes `reports/health-latest.md` through a PR into this repo, notifies the owner only if something needs them. Fortnightly after 4 weeks, then monthly.
-4. **Monthly audit:** a script (`tools/audit.py`, no model needed) checks STANDARDS ids marked *auto* against every repo, ignoring the three build-script settings, and compares with the baseline. A model then reads the report and proposes fixes. On the first run, find out whether a scheduled session can write to the other repos. If not, it stays report-only and a manual session applies fixes.
-5. **Left rail:** a small `kit` repo (rail, shared sign-in, theme), loaded by each app at a pinned version. Mock it as a picture first. It shows each person only the apps their `audience` allows, but the database lock is the real security. Phones need a drawer or bottom bar. It is the first across-the-board update; the audit then reports who is behind.
+4. **Monthly audit:** a script (`tools/audit.py`, no model needed) checks the STANDARDS ids marked *auto* against every repo (ignoring the three build-script settings) and compares with the baseline. A model then proposes fixes. On the first run, find out whether a scheduled session can write to the other repos; if not, it stays report-only.
+5. **Left rail:** a small `kit` repo (rail, shared sign-in, theme) loaded by each app at a pinned version. Mock it first. It shows each person only the apps their `audience` allows (the database lock is the real security). Phones need a drawer. It is the first across-the-board update.
 6. Add `shopping-list`, `the-big-move`, `travel-app` and `travel-planner` to the owner's App Board (a private claude.ai page).
 
 ## Gotchas
 - Our Library is at `ourlibrary.au`. Sign-in storage is per address, so it cannot share a session with the apps on `jcm-book-library.github.io`. The owner accepted a separate sign-in (D6); the rail links out to it.
 - Our Library's `HANDOVER.md` is about 3,500 words and holds reference material. Trim it (D7).
 - A session can only change repos it was started with. Adding repos mid-session was refused once; adding `control-room` worked when asked directly.
-- The earlier "repo creation failed" was a wrong call: this is a user account, so a session can probably create repos without the organisation option. Untested.
 - Never put the owner's email in this public repo. `owner-only.sql` has a placeholder; the filled copy is given in chat.
-- `tests/sql/owner-only.sh` needs the Books and Brain SQL as sibling checkouts or via `BOOKS_SQL` and `BRAIN_SQL`.
 
 ## Open questions for the owner
 - D1 to D9 in `STANDARDS.md` section 7.
