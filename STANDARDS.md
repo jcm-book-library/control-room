@@ -32,7 +32,7 @@ Version 1, 16 Nov 2026. Written from the 20 repos as they stood that day.
 |---|---|---|
 | A1 | **Build.** Source is `app.html`. `index.html` is built by `tools/build-pages.py`, copied from `templates/tools/`. The only edits allowed are the three settings at the top (`SHORT_NAME`, `THEME_COLOUR`, `LANG`). An app with a different build says so in its README. | auto |
 | A2 | **Home screen.** Any app used on a phone has `manifest.webmanifest` and icons: `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`. | auto |
-| A3 | **Look.** The shared colour tokens in `:root` (`--bg --surface --raise --line --fg --muted`, plus an accent), dark, month colours. Fonts: see D1. | auto (tokens) + manual |
+| A3 | **Look.** The shared colour tokens in `:root` (`--bg --surface --raise --line --fg --muted`, plus an accent), dark, month colours. Font: Roboto for all new and rebuilt apps (D1); existing apps switch when they are rebuilt or get the rail. | auto (tokens) + manual |
 | A4 | **Tests live in the repo**, and the README or `tests/README.md` says how to run them. They run before every pull request. An app that writes data has a test against a fake of its data store. | auto + manual |
 | A5 | **Phone first.** Works at 390 px and 1280 px wide with no sideways scrolling. | manual (test) |
 | A6 | **Scripts** only from cdnjs with pinned versions. **Fonts** only from Google Fonts. Everything else is inline. | auto |
@@ -115,7 +115,7 @@ Counts are repos out of 20. The audit uses these as its starting line.
 
 | Standard | Meets it | Gaps |
 |---|---|---|
-| R1 default branch `main` | 17 | `shopping-list`, `travel-app`, `travel-planner` have only a `claude/` branch |
+| R1 default branch `main` | 17 | `shopping-list`, `travel-app` and `travel-planner` had a `claude/` branch as their default. `main` now exists in all three (16 Nov), but their default branch still needs switching in GitHub settings. |
 | R2 `CLAUDE.md` points to the rules, 400 words or fewer | 15 | Over 400 words: `travel-app` (1600), `travel-planner` (1252), `sports-tracker` (1092), `tv-tracker` (557), `the-brain` (481). All 20 already point to the house rules. |
 | R4 charter has every field | 0 | All 20 have the 8 old fields. `audience` and `standards` are new. |
 | R5 `HANDOVER.md` at the root | 1 | Only `my-book-library` (3,500 words: too long, it holds reference material). `recall-arcade` has `docs/HANDOVER.md` and `sports-tracker` has `docs/handoff-formula-e.md`. |
@@ -132,15 +132,15 @@ Each recommendation becomes the standard when this pull request is merged. Say s
 
 | ID | Question | Recommendation |
 |---|---|---|
-| D1 | **Fonts.** The house rules say Atkinson Hyperlegible + Figtree (6 apps). Books and the shopping list now use Roboto. | Roboto for new and rebuilt apps. Existing apps switch when they get the rail. Update HOUSE-RULES section 4 then. |
+| D1 | **Fonts.** The house rules said Atkinson Hyperlegible + Figtree (6 apps). Books and the shopping list now use Roboto. | **Decided 16 Nov 2026: Roboto for all new and rebuilt apps.** Existing apps keep their font until they are rebuilt or get the rail. HOUSE-RULES section 4 updated. |
 | D2 | **Families** in `project.json` today: Entertainment, Life, Home, Finance, Hobby, Learning, Admin. The left rail will group differently. | Match the rail: Life, Money, Home, Workshop, Entertainment, Travel, Sport, plus Learning and Admin. So Finance becomes Money and Hobby becomes Workshop. |
 | D3 | **Status words** (section 3). | Keep each medium's own words. Add the missing ones (films: Paused, DNF) when each app is next touched. |
 | D4 | **Albums keep `Owned` in Status.** | Leave until Albums moves to Supabase, then split it into its own column (T7). |
 | D5 | **Sheet ids in public code** (9 repos). | No new ones. Existing ones go when each app moves to Supabase. Do not scrub now. |
-| D6 | **One sign-in across the rail.** Our Library is now at `ourlibrary.au`. Sign-in storage is per address, so it cannot share a session with the apps on `jcm-book-library.github.io`. | Accept a separate sign-in for Our Library (it is the family-facing app anyway). The rail links out to it. Revisit if you later want every app under one address. |
+| D6 | **One sign-in across the rail.** Our Library is now at `ourlibrary.au`. Sign-in storage is per address, so it cannot share a session with the apps on `jcm-book-library.github.io`. | **Decided 16 Nov 2026: accept a separate sign-in for Our Library** (it is the family-facing app anyway). The rail links out to it. Revisit if you later want every app under one address. |
 | D7 | **Size caps:** `CLAUDE.md` 400 words, `HANDOVER.md` 800 words. | Yes. Move the rest to `docs/`. The Library's handover is the first to trim. |
 | D8 | **Tests required** for an app that writes data (5 have none: `Bag-and-Tag`, `Pantry-Plate`, `Personal-budget`, `Sawdust-Soil`, `game-tracker`). | Yes, added when each app is next touched, not in one sweep. |
-| D9 | **Three repos have no `main`.** | Create `main` now so R1 holds everywhere. |
+| D9 | **Three repos have no `main`** (`shopping-list`, `travel-app`, `travel-planner`). They are ideas that never reached the point of merging into `main`. | **Decided 16 Nov 2026: create `main` now.** Done the same day in `travel-app` and `travel-planner` (`shopping-list` already had one). Still to do: switch each repo's default branch to `main` in GitHub settings. |
 
 ## Changelog
 

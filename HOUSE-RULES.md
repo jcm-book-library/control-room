@@ -61,7 +61,7 @@ Most apps share one shape. Start new ones from `control-room/templates/`.
 | `CLAUDE.md` | Points here, then this repo's own notes. |
 | `README.md` | What it does, live link, files, sheet tabs, how to run. |
 
-- **Look:** shared with Jackets & Manuscripts (`my-book-library`): Proton Seasons tokens, Atkinson Hyperlegible + Figtree, dark.
+- **Look:** the shared Proton Seasons tokens, dark, and **Roboto for all new and rebuilt apps** (decided 16 Nov 2026). Existing apps keep Atkinson Hyperlegible + Figtree until they are rebuilt or get the left rail.
 - **Scripts** only from cdnjs (pinned versions), fonts only from Google Fonts, everything else inline.
 - **Google sign-in on Pages** reuses the book app's OAuth Client ID (saved in the browser as `mbl_config`). Each app keeps its own localStorage keys with its own prefix.
 - **Testing:** headless Playwright with Chromium at `/opt/pw-browsers/chromium` and a stubbed `window.claude`, at 390px and 1280px wide, before every publish. No sideways scrolling.
