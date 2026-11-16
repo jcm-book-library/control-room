@@ -1,6 +1,6 @@
 # House rules
 
-Shared rules for every repo in `jcm-book-library`. Each repo's `CLAUDE.md` points here and adds only what is special about that repo. Where a repo's own notes are more specific, they win.
+Shared rules for every repo in `jcm-book-library`. What each repo and app should have and do is in [STANDARDS.md](STANDARDS.md). Each repo's `CLAUDE.md` points here and adds only what is special about that repo. Where a repo's own notes are more specific, they win.
 
 ## The owner
 
@@ -102,3 +102,9 @@ Every repo has one at its root. The Control Room dashboard reads it from `main`;
 - Ideas are GitHub issues labelled `idea`, in whichever repo they belong to. The dashboard lists them.
 - Dashboard: https://jcm-book-library.github.io/control-room/ (refreshed daily).
 - A new repo appears on the dashboard the next day. Give it a `project.json`, a `CLAUDE.md` that points here, and a README.
+
+## 8. Sessions and standards
+
+- Start every session by reading `CLAUDE.md`, then `HANDOVER.md`. End it by rewriting `HANDOVER.md` (not adding to it). The start and finish prompts are in `STANDARDS.md` section 4.
+- Start a new session at about 50% context, after each merged stage or big change, when switching repo or topic, and after a week idle.
+- At the end of every big change ask: **did we learn something every app should do?** If yes, open an issue in `control-room` labelled `standard` (what, which app, why) instead of only changing one app. The monthly audit reads them and the owner decides.

@@ -6,5 +6,7 @@
   "stage": "Idea",
   "live": null,
   "tags": [],
+  "audience": "owner",
+  "standards": 1,
   "updated": "2026-10-19"
 }
