@@ -1,0 +1,2496 @@
+{
+ "taken": "2026-11-16",
+ "standards_version": 1,
+ "note": "Facts gathered by reading each repo's default branch. Booleans only for private data; no ids, emails or keys are stored here.",
+ "repos": [
+  {
+   "repo": "album-tracker",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    ".gitignore",
+    "CLAUDE.md",
+    "README.md",
+    "ROADMAP.md",
+    "app.html",
+    "design",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "tests",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 152,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": true
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Building",
+    "family": "Entertainment",
+    "tags": [
+     "media-tracker"
+    ],
+    "audience": null
+   },
+   "handover_plan_files": [
+    "ROADMAP.md"
+   ],
+   "tests": {
+    "exists": true,
+    "location": "tests/",
+    "how_to_run": "README: cd tests && npm test (node smoke.mjs); RUN_START=... overrides date",
+    "kinds": [
+     "playwright smoke with JSON fixtures (albums, classical)",
+     "has own package.json and package-lock.json"
+    ]
+   },
+   "build_script": {
+    "path": "tools/build-pages.py",
+    "md5_matches_template": false,
+    "differs_how": "Differs from template (no Starter-copy docstring, no html.escape import) and also writes manifest.webmanifest; repo also has tools/build-artifact.py"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32",
+     "svg"
+    ],
+    "service_worker_exists": false,
+    "note": "manifest icons list only 192 and 512 PNGs; no service worker referenced in app.html (serviceWorker count 0)"
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "app.html": 414,
+     "index.html": 415,
+     "design/music-collection-preview.html": 24,
+     "design/shelf-preview.html": 48
+    }
+   },
+   "theme": {
+    "name_if_any": "none named (own palette with --c, --deep, --vein, --ink variables)",
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--danger",
+     "--c",
+     "--deep",
+     "--vein",
+     "--ink",
+     "--accent"
+    ],
+    "google_fonts_families": [
+     "Bricolage Grotesque",
+     "Lexend"
+    ]
+   },
+   "data_store": "google-sheet",
+   "data_store_note": "Entertainment Tracker sheet, guitar-emoji tab and tabs prefixed with it; app.html public carries no sheet id (private artifact copy built by tools/build-artifact.py)",
+   "sign_in": {
+    "method": "Google GIS token client reusing mbl_config Client ID; also claude.ai artifact",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "mbl_config",
+     "sg-token",
+     "sg-config",
+     "sg-tab",
+     "sg-bg",
+     "sg-colview",
+     "sg-pool",
+     "sg-pressing",
+     "sg-showlog",
+     "sg-covers"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": false,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": true,
+   "status_vocabulary_or_plan_columns": {
+    "status": [
+     "Coming Soon",
+     "Listen",
+     "Listened",
+     "Purchase",
+     "Owned",
+     "Didn't like"
+    ],
+    "plan_columns": [
+     "Plan (Up next, Soon, Someday)",
+     "upNext order",
+     "Why",
+     "Favourite",
+     "Labelled"
+    ]
+   },
+   "id_scheme": "Highest existing id + 1 with floors: albums from 1000 (Math.max(1000,...ids)+1), a second series from 7000",
+   "notable": [
+    "Different look and storage prefix (sg-) and fonts from the other trackers; not Proton Seasons",
+    "Only one with a tests/package.json and a second build script (build-artifact.py) that injects the sheet id outside the repo",
+    "ROADMAP.md plus long dated change log in README with backup tab names"
+   ]
+  },
+  {
+   "repo": "Bag-and-Tag",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    "CLAUDE.md",
+    "README.md",
+    "app.html",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "sw.js",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 127,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Working",
+    "family": "Hobby",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [],
+   "tests": {
+    "exists": false,
+    "location": null,
+    "how_to_run": null,
+    "kinds": []
+   },
+   "build_script": {
+    "path": "tools/build-pages.py",
+    "md5_matches_template": false,
+    "differs_how": "template-derived but adds offline service worker support (sw.js); header comment mentions it"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32",
+     "svg"
+    ],
+    "service_worker_exists": true
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "app.html": 91.6,
+     "index.html": 92.5
+    }
+   },
+   "theme": {
+    "name_if_any": null,
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--accent",
+     "--accent-ink",
+     "--tag",
+     "--tag-ink",
+     "--ok",
+     "--danger"
+    ],
+    "google_fonts_families": [
+     "Archivo",
+     "Atkinson Hyperlegible"
+    ]
+   },
+   "data_store": "both",
+   "data_note": "Browser IndexedDB is primary; optional Google Sheet second copy (default id in SHEET_DEFAULT)",
+   "sign_in": {
+    "method": "Google GIS token client (optional, for sheet copy)",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "bt_sheet",
+     "mbl_config"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": true,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": true,
+   "status_vocabulary_or_plan_columns": null,
+   "id_scheme": "Bag codes [Prefix]-[Stage]-[Letter] (e.g. F-3-A), next free letter suggested per stage; special bags F-SPARE/F-PRINT/F-DOC; 'code' and 'ref' sheet columns are read-only on sync",
+   "notable": [
+    "Only repo with a service worker (sw.js, VERSION bump on release) and offline cache",
+    "Primary store is IndexedDB, not a sheet",
+    "README documents a Save backup file feature (app-level backup, not sheet backup-before-change)"
+   ]
+  },
+  {
+   "repo": "control-room",
+   "branch_checked_out": "main",
+   "kind": "static-site",
+   "top_level_entries": [
+    ".github",
+    ".gitignore",
+    "CLAUDE.md",
+    "HOUSE-RULES.md",
+    "README.md",
+    "plans",
+    "project.json",
+    "site",
+    "supabase",
+    "templates",
+    "tests",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 126,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Building",
+    "family": "Admin",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [
+    "plans/SUPABASE.md (folder plans/; matches PLAN)"
+   ],
+   "tests": {
+    "exists": true,
+    "location": "tests/ (test_collect.py, dashboard.spec.mjs, sample-repos.json, sql/owner-only.sh)",
+    "how_to_run": "python3 tests/test_collect.py; NODE_PATH=$(npm root -g) node tests/dashboard.spec.mjs; bash tests/sql/owner-only.sh (needs sibling repos and PostgreSQL 16)",
+    "kinds": [
+     "python unittest",
+     "playwright",
+     "sql shell"
+    ]
+   },
+   "build_script": {
+    "path": "templates/tools/build-pages.py (is the template; md5 93d2b73f91a7df3255f2b1ce16a6f259)",
+    "md5_matches_template": null,
+    "differs_how": "This repo holds the template; its own site is hand-written and built by collect.yml (tools/collect.py)"
+   },
+   "pwa": {
+    "manifest_exists": false,
+    "icons_present": [],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "site/index.html": 12.9
+    }
+   },
+   "theme": {
+    "name_if_any": "Proton Seasons (named in HOUSE-RULES; not in site/index.html)",
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--accent",
+     "--accent-ink",
+     "--accent-2",
+     "--danger",
+     "--warn",
+     "--ok"
+    ],
+    "google_fonts_families": [
+     "Atkinson Hyperlegible",
+     "Figtree"
+    ]
+   },
+   "data_store": "static-data",
+   "data_store_note": "Reads public GitHub data collected into site/data/repos.json at deploy time, not committed",
+   "sign_in": {
+    "method": "none",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": []
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": false,
+    "emails": false,
+    "api_keys_or_tokens": false,
+    "note": "only example.com addresses in tests/sql"
+   },
+   "github_workflows": [
+    "collect.yml"
+   ],
+   "sheet_safety_rules_mentioned": true,
+   "status_vocabulary_or_plan_columns": null,
+   "id_scheme": null,
+   "notable": [
+    "Reference: HOUSE-RULES.md sections: The owner; 1 Google Sheet safety; 2 Branches and pull requests; 3 Using models; 4 Build template; 5 Charter project.json; 6 Privacy; 7 Ideas and the Control Room",
+    "templates/: CLAUDE.md, README.md, manifest.webmanifest, project.json, tools/build-pages.py (no app.html, icons or tests template)",
+    "Workflow collect.yml daily + push + manual; tests cover collect.py, dashboard and owner-only SQL; plans/SUPABASE.md and supabase/owner-only.sql also live here"
+   ]
+  },
+  {
+   "repo": "daily-paper",
+   "branch_checked_out": "main",
+   "kind": "scheduled-job",
+   "top_level_entries": [
+    ".github",
+    ".gitignore",
+    "CLAUDE.md",
+    "README.md",
+    "build.py",
+    "project.json",
+    "sources.toml",
+    "templates",
+    "tests"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 150,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Working",
+    "family": "Life",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [],
+   "tests": {
+    "exists": true,
+    "location": "tests/ (test_build.py, fixtures/)",
+    "how_to_run": "python -m unittest discover -s tests (Python 3.11+, no packages); also run in workflow on every push",
+    "kinds": [
+     "python unittest"
+    ]
+   },
+   "build_script": {
+    "path": "build.py",
+    "md5_matches_template": null,
+    "differs_how": "Python generator (feeds to site/index.html), not the single-file build-pages.py; no tools/ folder"
+   },
+   "pwa": {
+    "manifest_exists": false,
+    "icons_present": [
+     "svg"
+    ],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "templates/page.html": 4
+    }
+   },
+   "theme": {
+    "name_if_any": "Newspaper front page (own look)",
+    "root_css_variable_names": [],
+    "google_fonts_families": [
+     "Grenze Gotisch",
+     "Roboto",
+     "Roboto Condensed"
+    ]
+   },
+   "data_store": "static-data",
+   "data_store_note": "Public RSS/JSON feeds (news, ESPN, BOM, Open-Meteo) fetched at build time; configured in sources.toml",
+   "sign_in": {
+    "method": "none",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "sentinel-sport"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": false,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [
+    "paper.yml"
+   ],
+   "sheet_safety_rules_mentioned": false,
+   "status_vocabulary_or_plan_columns": null,
+   "id_scheme": null,
+   "notable": [
+    "Only scheduled job: workflow builds three times a day (6am, 12pm, 6pm Melbourne) and publishes to Pages",
+    "Python build, no app.html/index.html in repo (generated site/index.html); Python unittest tests run in CI",
+    "Name in project.json is The Overnight Sentinel, differing from repo name"
+   ]
+  },
+  {
+   "repo": "game-tracker",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    "CLAUDE.md",
+    "README.md",
+    "app.html",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 232,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Building",
+    "family": "Entertainment",
+    "tags": [
+     "media-tracker"
+    ],
+    "audience": null
+   },
+   "handover_plan_files": [],
+   "tests": {
+    "exists": false,
+    "location": null,
+    "how_to_run": null,
+    "kinds": []
+   },
+   "build_script": {
+    "path": "tools/build-pages.py",
+    "md5_matches_template": false,
+    "differs_how": "Same idea but not the template: lacks the 'Starter copy' docstring and the html.escape import; settings block differs (no SHORT_NAME placeholder at same place)"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32"
+    ],
+    "service_worker_exists": false,
+    "note": "manifest icons list only 192 and 512 PNGs; no service worker referenced in app.html (serviceWorker count 0)"
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "app.html": 117,
+     "index.html": 117
+    }
+   },
+   "theme": {
+    "name_if_any": "Proton Seasons (dark only, copied from book app)",
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--accent",
+     "--accent-next",
+     "--accent-ink",
+     "--accent-2",
+     "--danger",
+     "--display"
+    ],
+    "google_fonts_families": [
+     "Atkinson Hyperlegible",
+     "Figtree"
+    ]
+   },
+   "data_store": "google-sheet",
+   "data_store_note": "Entertainment Tracker sheet, game emoji tab plus 'Play Log' tab",
+   "sign_in": {
+    "method": "Google GIS token client reusing mbl_config Client ID; also claude.ai artifact mcp",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "mbl_config",
+     "gt-google-token",
+     "gt-tab",
+     "gt-timer"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": true,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "private_data_note": "sheet id in app.html and CLAUDE.md",
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": true,
+   "status_vocabulary_or_plan_columns": {
+    "status": [
+     "Playing",
+     "Next Up",
+     "Playlist",
+     "Replay",
+     "Paused",
+     "Played",
+     "DNF",
+     "Coming Soon",
+     "In Development"
+    ],
+    "plan_columns": [
+     "Tier (Up next, Soon, Someday; shown as 'Plan')",
+     "upNextOrder",
+     "Why"
+    ]
+   },
+   "id_scheme": "Highest existing id + 1 (String(Math.max(0,...ids)+1))",
+   "notable": [
+    "Only app repo with no tests folder",
+    "Smallest app (117KB) and no plan/handover file",
+    "Has a session timer (gt-timer) and Play Log tab; Proton Seasons theme like the book app"
+   ]
+  },
+  {
+   "repo": "household",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    "CLAUDE.md",
+    "README.md",
+    "app.html",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 254,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Building",
+    "family": "Home",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [],
+   "tests": {
+    "exists": true,
+    "location": "tools/ (test-engine.js, test.js)",
+    "how_to_run": "node tools/test-engine.js and NODE_PATH=$(npm root -g) node tools/test.js /tmp/hh-shots (CLAUDE.md: run both before every push)",
+    "kinds": [
+     "node script (schedule engine unit)",
+     "playwright smoke/screenshots"
+    ]
+   },
+   "build_script": {
+    "path": "tools/build-pages.py",
+    "md5_matches_template": false,
+    "differs_how": "Only SHORT_NAME ('Household') and THEME_COLOUR (#15141c) changed; same line count as template (template md5 93d2b73f91a7df3255f2b1ce16a6f259 at control-room/templates/tools/build-pages.py)"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32"
+    ],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "app.html": 84,
+     "index.html": 84
+    }
+   },
+   "theme": {
+    "name_if_any": null,
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--accent",
+     "--accent-ink",
+     "--danger",
+     "--ok",
+     "--warn",
+     "--home"
+    ],
+    "google_fonts_families": [
+     "Atkinson Hyperlegible",
+     "Figtree"
+    ]
+   },
+   "data_store": "google-sheet",
+   "data_store_note": "Own household Google Sheet (tabs Jobs, Zones, Groceries, Done); sheet id kept in browser settings; ?demo runs on sample data",
+   "sign_in": {
+    "method": "Google GIS token client (spreadsheets scope)",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "household-tab",
+     "mbl_config",
+     "household_config (cfgKey)",
+     "jm-google-token (tokKey)"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": false,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": false,
+   "status_vocabulary_or_plan_columns": "Groceries has a Status column (values not enumerated in docs); Jobs have Active, Done tab has Void; schedule is computed live from rules (Every/Unit/Anchor/If missed); no Plan/Tier column found; 'Up next' appears once in app.html",
+   "id_scheme": "unknown (README says tabs have an id column and the page finds rows by id; generator not located by grep)",
+   "notable": [
+    "Week schedule computed live from recurrence rules, nothing pre-planned into the sheet; pure ENGINE START/END block tested separately",
+    "Never deletes rows: remove = Active FALSE, untick = Void TRUE; sheetIds looked up by tab title",
+    "Sheet still empty (built ahead of the early-2027 move); ?demo mode"
+   ]
+  },
+  {
+   "repo": "investments",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    ".github",
+    ".gitignore",
+    ".nojekyll",
+    "CLAUDE.md",
+    "README.md",
+    "data",
+    "fetch_prices.py",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "requirements.txt",
+    "tests",
+    "tickers.toml"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 149,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Working",
+    "family": "Finance",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [],
+   "tests": {
+    "exists": true,
+    "location": "tests/test_fetch_prices.py",
+    "how_to_run": "python3 -m unittest discover -s tests",
+    "kinds": [
+     "python unittest"
+    ]
+   },
+   "build_script": {
+    "path": null,
+    "md5_matches_template": null,
+    "differs_how": "no build script; index.html is edited directly (no app.html)"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32",
+     "svg"
+    ],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "index.html": 93.2
+    }
+   },
+   "theme": {
+    "name_if_any": null,
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--accent",
+     "--accent-soft",
+     "--accent-ink",
+     "--up",
+     "--down",
+     "--warn"
+    ],
+    "google_fonts_families": [
+     "Fraunces",
+     "Figtree"
+    ]
+   },
+   "data_store": "both",
+   "data_note": "Private Google Sheet (Watchlist/Purchases/Resources) plus public ETF price files committed in data/ by a workflow",
+   "sign_in": {
+    "method": "Google GIS token client",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "inv_config",
+     "mbl_config",
+     "jm-google-token"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": true,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [
+    "prices.yml"
+   ],
+   "sheet_safety_rules_mentioned": false,
+   "status_vocabulary_or_plan_columns": "Watchlist sheet columns: Code, Name, Category, Ethical, Status, Target price, Notes, Added (status values not enumerated in docs; not checked in code)",
+   "id_scheme": null,
+   "notable": [
+    "Only repo with a scheduled job (weekday price download, commits data to main, publishes site)",
+    "Single-file index.html with no app.html/build step; has .nojekyll, requirements.txt, tickers.toml",
+    "Different fonts (Fraunces+Figtree), no Proton Seasons theme name; sheet id hardcoded as DEFAULT_SHEET"
+   ]
+  },
+  {
+   "repo": "my-book-library",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    ".gitignore",
+    "CLAUDE.md",
+    "CNAME",
+    "HANDOVER.md",
+    "README.md",
+    "app.html",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "old.html",
+    "plans",
+    "project.json",
+    "supabase",
+    "tests",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 189,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": true
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Mature",
+    "family": "Entertainment",
+    "tags": [
+     "media-tracker"
+    ],
+    "audience": null
+   },
+   "handover_plan_files": [
+    "HANDOVER.md"
+   ],
+   "tests": {
+    "exists": true,
+    "location": "tests/",
+    "how_to_run": "bash tests/run-all.sh (about 3 min; check.sh alone about 2 min); documented in CLAUDE.md and tests/README.md",
+    "kinds": [
+     "playwright visual screenshot compare (visual.js, check.sh, cmp.py)",
+     "playwright write-flow compare (flows.js)",
+     "node fake-Supabase end-to-end (supabase.js)",
+     "node copy-back tool test (copyback.js)",
+     "sql family privacy rules on throwaway local Postgres 16 (sql/family.sh)"
+    ]
+   },
+   "build_script": {
+    "path": "tools/build-pages.py",
+    "md5_matches_template": false,
+    "differs_how": "Same idea but not the template: lacks the 'Starter copy' docstring and the html.escape import; settings block differs (no SHORT_NAME placeholder at same place)"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32",
+     "svg"
+    ],
+    "service_worker_exists": false,
+    "note": "manifest icons list only 192 and 512 PNGs; no service worker referenced in app.html (serviceWorker count 0)"
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "app.html": 754,
+     "index.html": 758,
+     "old.html": 81
+    }
+   },
+   "theme": {
+    "name_if_any": "Proton Seasons (also a THEMES map and 'plans/THEMES.md')",
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--accent",
+     "--accent-next",
+     "--accent-ink",
+     "--accent-2",
+     "--danger",
+     "--warn"
+    ],
+    "google_fonts_families": [
+     "Roboto",
+     "EB Garamond",
+     "Atkinson Hyperlegible"
+    ]
+   },
+   "data_store": "both",
+   "data_store_note": "Google Sheet (Entertainment Tracker) or Supabase (schema 'books'); each device chooses in Toolbox > Data & sign-in; sheet is being moved to Supabase",
+   "sign_in": {
+    "method": "Google GIS token client (Sheets mode) plus Supabase email one-time-code and email+password (Supabase mode)",
+    "uses_shared_session_key_jcm_sb_session": true,
+    "localStorage_keys": [
+     "mbl-tab",
+     "mbl_bg",
+     "mbl_dysfont",
+     "mbl_libview",
+     "mbl_scroll",
+     "mbl_spines",
+     "mbl_theme",
+     "mbl_wkind",
+     "mbl_config",
+     "jcm-sb-session",
+     "jcm-sb-refresh",
+     "jm-timer"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": true,
+    "emails": false,
+    "api_keys_or_tokens": true
+   },
+   "private_data_note": "app.html/old.html contain sheet ids and a Supabase project URL plus a sb_publishable (public) key; only an example.com placeholder email",
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": "unknown",
+   "sheet_safety_note": "CLAUDE.md/README do not mention backup/by-id/lane, but HANDOVER.md states find row by id and never rewrite tabs, and CLAUDE.md says never read 'Brain tester' beyond Date and Pages",
+   "status_vocabulary_or_plan_columns": {
+    "status": [
+     "Reading",
+     "TBR",
+     "Re-read",
+     "Finished",
+     "Paused",
+     "DNF"
+    ],
+    "plan_columns": [
+     "Plan (field 'tier': Up next, Soon, Someday)",
+     "upNextOrd",
+     "why"
+    ]
+   },
+   "id_scheme": "Highest existing id + 4 (convention since first version, also checks a sheetDb _idFloor); wishlist ids WL0001...",
+   "notable": [
+    "Most mature: Sheet and Supabase dual mode, owns the shared jcm-sb-session sign-in used by other apps",
+    "Largest app (754KB) with the biggest test suite incl. Postgres SQL tests and a Family tab; keeps old.html reference copy and supabase/*.sql",
+    "Has CNAME / custom domain ourlibrary.au and plans/ folder (FAMILY.md, THEMES.md)"
+   ]
+  },
+  {
+   "repo": "my-film-library",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    "CLAUDE.md",
+    "PLAN.md",
+    "README.md",
+    "app.html",
+    "design",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "tests",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 247,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": true
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Building",
+    "family": "Entertainment",
+    "tags": [
+     "media-tracker"
+    ],
+    "audience": null
+   },
+   "handover_plan_files": [
+    "PLAN.md",
+    "design/theme-notes.md",
+    "tests/planfixture.mjs"
+   ],
+   "tests": {
+    "exists": true,
+    "location": "tests/",
+    "how_to_run": "README/tests README: node tests/stage1.test.mjs (also stage2-4, themes, favourites, interact, tools); needs Playwright at /opt/node-tools and Chromium at /opt/pw-browsers/chromium",
+    "kinds": [
+     "playwright stage tests",
+     "in-memory fake Google Sheets (fakesheet.mjs)",
+     "interaction (drag/touch) tests"
+    ]
+   },
+   "build_script": {
+    "path": "tools/build-pages.py",
+    "md5_matches_template": false,
+    "differs_how": "Same idea but not the template: lacks the 'Starter copy' docstring and the html.escape import; settings block differs (no SHORT_NAME placeholder at same place)"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32"
+    ],
+    "service_worker_exists": false,
+    "note": "manifest icons list only 192 and 512 PNGs; no service worker referenced in app.html (serviceWorker count 0)"
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "app.html": 244,
+     "index.html": 245,
+     "design/themes-board.html": 33
+    }
+   },
+   "theme": {
+    "name_if_any": "Film Vault themes (month-based film themes, plus Default)",
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--accent",
+     "--accent-next",
+     "--accent-ink",
+     "--accent-2",
+     "--danger",
+     "--display"
+    ],
+    "google_fonts_families": [
+     "Atkinson Hyperlegible",
+     "Figtree",
+     "(a further fonts css2 link exists, not expanded)"
+    ]
+   },
+   "data_store": "google-sheet",
+   "data_store_note": "Entertainment Tracker sheet, film emoji tab and tabs prefixed with it",
+   "sign_in": {
+    "method": "Google GIS token client reusing mbl_config Client ID; also claude.ai artifact mcp",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "mbl_config",
+     "mvl-google-token",
+     "mvl-tab",
+     "mvl-theme",
+     "mvl-theme-edits",
+     "mvl-theme-custom"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": false,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": true,
+   "status_vocabulary_or_plan_columns": {
+    "status": [
+     "Coming Soon",
+     "Rewatch",
+     "Watched",
+     "Watching",
+     "Watchlist",
+     "Next Up",
+     "(app also derives 'Not seen')"
+    ],
+    "plan_columns": [
+     "Plan (Up next, Soon, Someday)",
+     "Order (Up next order)",
+     "Why",
+     "Purchase"
+    ]
+   },
+   "id_scheme": "Highest existing id + 1 (Math.max(0,...ids)+1)",
+   "notable": [
+    "Only repo with PLAN.md as a staged plan (stages 0-4) and a Plan Backlog score",
+    "Names tests stage1..4.test.mjs rather than smoke",
+    "No sheet id anywhere in repo (sheet chosen at runtime)"
+   ]
+  },
+  {
+   "repo": "Pantry-Plate",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    "CLAUDE.md",
+    "README.md",
+    "app.html",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 163,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Working",
+    "family": "Home",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [],
+   "tests": {
+    "exists": false,
+    "location": null,
+    "how_to_run": null,
+    "kinds": []
+   },
+   "build_script": {
+    "path": "tools/build-pages.py",
+    "md5_matches_template": false,
+    "differs_how": "differs from template: no template header comment, no `from html import escape`, app name/short name hardcoded (44-line template diff)"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32",
+     "svg"
+    ],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "app.html": 117.2,
+     "index.html": 117.9
+    }
+   },
+   "theme": {
+    "name_if_any": "Proton Seasons",
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--accent",
+     "--accent-next",
+     "--accent-ink",
+     "--ok",
+     "--warn",
+     "--danger"
+    ],
+    "google_fonts_families": [
+     "Atkinson Hyperlegible",
+     "Figtree"
+    ]
+   },
+   "data_store": "google-sheet",
+   "data_note": "Google Sheet 'Pantry & Plate'; localStorage pp-data-v1 is a cache",
+   "sign_in": {
+    "method": "Google GIS token client",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "pp-data-v1",
+     "pp-sync",
+     "pp-tab",
+     "pp-google-token",
+     "mbl_config"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": true,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": false,
+   "status_vocabulary_or_plan_columns": null,
+   "id_scheme": null,
+   "notable": [
+    "Sheet id appears in CLAUDE.md and app code",
+    "CLAUDE.md has its own 'Using models'/lead-session notes and Australian-measures rules",
+    "Dark-only theme, per CLAUDE.md"
+   ]
+  },
+  {
+   "repo": "Personal-budget",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    "CLAUDE.md",
+    "README.md",
+    "app.html",
+    "docs",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 136,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Building",
+    "family": "Finance",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [],
+   "tests": {
+    "exists": false,
+    "location": null,
+    "how_to_run": null,
+    "kinds": []
+   },
+   "build_script": {
+    "path": "tools/build-pages.py",
+    "md5_matches_template": false,
+    "differs_how": "differs from template: no template header comment, no `from html import escape`, app name/short name hardcoded (44-line template diff)"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32",
+     "svg"
+    ],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "app.html": 57.3,
+     "index.html": 57.9
+    }
+   },
+   "theme": {
+    "name_if_any": "Proton Seasons",
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--accent",
+     "--accent-next",
+     "--accent-ink",
+     "--accent-2",
+     "--good",
+     "--warn"
+    ],
+    "google_fonts_families": [
+     "Atkinson Hyperlegible",
+     "Figtree"
+    ]
+   },
+   "data_store": "google-sheet",
+   "data_note": "Google Sheet 'Personal Budget'; sheet link entered by user in browser (cc_config), not in code; shows example figures until set",
+   "sign_in": {
+    "method": "Google GIS token client (OAuth, spreadsheets scope), same client as Jackets & Manuscripts",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "cc_config",
+     "mbl_config",
+     "cc-tab",
+     "jm-google-token"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": false,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": false,
+   "status_vocabulary_or_plan_columns": null,
+   "id_scheme": null,
+   "notable": [
+    "Only repo whose sheet id is kept out of code (entered per browser)",
+    "Explicit write scope stated: Balances check-ins and Instalments Paid tick only",
+    "Has docs/data-model.md; README says Plan stage still in progress (stage Building)"
+   ]
+  },
+  {
+   "repo": "recall-arcade",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    ".github",
+    ".gitignore",
+    "CLAUDE.md",
+    "README.md",
+    "docs",
+    "index.html",
+    "package-lock.json",
+    "package.json",
+    "project.json",
+    "public",
+    "scripts",
+    "src",
+    "tsconfig.json",
+    "vite.config.ts"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 159,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": true
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Working",
+    "family": "Learning",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [
+    "docs/HANDOVER.md",
+    "docs/roadmap.md"
+   ],
+   "tests": {
+    "exists": false,
+    "location": null,
+    "how_to_run": "none stated; npm run build runs tsc --noEmit; scripts/check-*.mjs and sweep-games.mjs are check scripts",
+    "kinds": [
+     "node check scripts (scripts/check-brawl, check-flyover, check-island, check-labyrinth, sweep-games)",
+     "typecheck"
+    ]
+   },
+   "build_script": {
+    "path": null,
+    "md5_matches_template": null,
+    "differs_how": "Vite + TypeScript (npm run build), not build-pages.py; HOUSE-RULES section 4 names this exception"
+   },
+   "pwa": {
+    "manifest_exists": false,
+    "icons_present": [
+     "svg (inline data-URI favicon only)"
+    ],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "index.html": 1.0
+    },
+    "source_layout": {
+     "src/arcade": 27,
+     "src/assets": 7,
+     "src/boards": 10,
+     "src/data": 10,
+     "src/decks": 56,
+     "src/engine": 7,
+     "src/music": 3,
+     "src/ui": 31,
+     "src root files": "main.ts, style.css, island.css",
+     "public": "arcade, entertainment",
+     "scripts": "16 build/check/from-sheet scripts"
+    }
+   },
+   "theme": {
+    "name_if_any": null,
+    "root_css_variable_names": [
+     "--bg",
+     "--panel",
+     "--ink",
+     "--muted",
+     "--line",
+     "--ocean",
+     "--grid",
+     "--land",
+     "--range",
+     "--range-edge",
+     "--land-off",
+     "--edge"
+    ],
+    "google_fonts_families": [
+     "Atkinson Hyperlegible",
+     "Silkscreen",
+     "Noto Music (as seen in family= string, may be truncated)"
+    ]
+   },
+   "data_store": "localStorage-only",
+   "data_store_note": "Progress in browser; build-time data generated from sheets by scripts/*-from-sheet.py, no runtime sheet",
+   "sign_in": {
+    "method": "none",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "learning-arcade:challenges",
+     "learning-arcade:island",
+     "learning-arcade:prefs",
+     "learning-arcade:stamps",
+     "learning-arcade:flyover",
+     "learning-arcade:labyrinth",
+     "learning-arcade:pong",
+     "learning-arcade:study-off",
+     "learning-arcade:track",
+     "learning-arcade:hero"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": false,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [
+    "deploy.yml"
+   ],
+   "sheet_safety_rules_mentioned": false,
+   "status_vocabulary_or_plan_columns": null,
+   "id_scheme": null,
+   "notable": [
+    "Vite + TypeScript, built and deployed by GitHub Action; no app.html",
+    "Games are decks in src/decks drawn by boards in src/boards; ~50 design docs in docs/",
+    "localStorage prefix learning-arcade: (older name than repo)"
+   ]
+  },
+  {
+   "repo": "Sawdust-Soil",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    "CLAUDE.md",
+    "README.md",
+    "app.html",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 151,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Working",
+    "family": "Home",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [],
+   "tests": {
+    "exists": false,
+    "location": null,
+    "how_to_run": null,
+    "kinds": []
+   },
+   "build_script": {
+    "path": "tools/build-pages.py",
+    "md5_matches_template": false,
+    "differs_how": "differs from template: no template header comment, no `from html import escape`, app name/short name hardcoded (44-line template diff); 1488 bytes"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32",
+     "svg"
+    ],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "app.html": 111.1,
+     "index.html": 112.0
+    }
+   },
+   "theme": {
+    "name_if_any": "unknown (own tokens: --leaf, --timber; not named Proton Seasons)",
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--leaf",
+     "--timber",
+     "--ok",
+     "--warn",
+     "--bad",
+     "--on-accent"
+    ],
+    "google_fonts_families": [
+     "Atkinson Hyperlegible",
+     "Atkinson Hyperlegible Mono",
+     "Figtree"
+    ]
+   },
+   "data_store": "google-sheet",
+   "data_note": "Google Sheet 'Sawdust & Soil' (Tasks, List, Projects); app rewrites tabs whole, sheet wins on sync; also kept in browser",
+   "sign_in": {
+    "method": "Google GIS token client",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "ss_gconfig",
+     "ss_gtoken",
+     "ss_lastsync",
+     "ss_<key> (prefix)"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": true,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": false,
+   "status_vocabulary_or_plan_columns": null,
+   "id_scheme": null,
+   "notable": [
+    "Sheet is overwritten whole on sync (no find-by-id), differs from house sheet-safety style",
+    "Uses its own ss_ localStorage prefix, not mbl_config",
+    "README says Pages 'once turned on'; sheet URL in README"
+   ]
+  },
+  {
+   "repo": "shopping-list",
+   "branch_checked_out": "claude/focused-feynman-13jm0b",
+   "kind": "app",
+   "top_level_entries": [
+    "CLAUDE.md",
+    "README.md",
+    "app.html",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 364,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Building",
+    "family": "Finance",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [],
+   "tests": {
+    "exists": true,
+    "location": "tools/ (test-logic.js, test.js)",
+    "how_to_run": "node tools/test-logic.js and NODE_PATH=$(npm root -g) node tools/test.js /tmp/wn-shots (run both before every push)",
+    "kinds": [
+     "node script (pure logic: money, totals, import mapper)",
+     "playwright smoke/screenshots"
+    ]
+   },
+   "build_script": {
+    "path": "tools/build-pages.py",
+    "md5_matches_template": false,
+    "differs_how": "Adds 'import re' (40 vs 39 lines); SHORT_NAME 'Want & Need', THEME_COLOUR #5e574d (template md5 93d2b73f91a7df3255f2b1ce16a6f259 at control-room/templates/tools/build-pages.py)"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32"
+    ],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "app.html": 136,
+     "index.html": 136
+    }
+   },
+   "theme": {
+    "name_if_any": "Neutral palette with auto/light/dark theme (wn-theme)",
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--line2",
+     "--fg",
+     "--muted",
+     "--faint",
+     "--accent",
+     "--accent-ink",
+     "--accent-soft",
+     "--need"
+    ],
+    "google_fonts_families": [
+     "Roboto"
+    ]
+   },
+   "data_store": "google-sheet",
+   "data_store_note": "Own Google Sheet tabs (Items, Stocktakes, Stock); read-only import from owner's hand-made tabs; photos in Drive (drive.file scope); sheet id in browser (wn_config)",
+   "sign_in": {
+    "method": "Google GIS token client (spreadsheets scope, plus drive.file for photos)",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "mbl_config",
+     "wn-group",
+     "wn-qacat",
+     "wn-sort",
+     "wn-theme",
+     "wn-view",
+     "wn_config (cfgKey)",
+     "jm-google-token",
+     "wn-drive-token"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": false,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": false,
+   "status_vocabulary_or_plan_columns": "Status: Idea, Planned, Waiting for sale, Bought, Dropped (README: same as Coin & Compass); Need or want; Priority; Time frame; Category/Subcategory; no Plan/Tier/Up-next",
+   "id_scheme": "unknown in code by grep; README says rows have an id column and page finds rows by id",
+   "notable": [
+    "Checked out branch is a claude/ feature branch, not main (rev-parse output, not default branch as briefed)",
+    "Only app with Drive photo upload (second token wn-drive-token) and an importer from owner's other tabs; totals feed the budget app",
+    "Build script has an extra 'import re' step beyond the template"
+   ]
+  },
+  {
+   "repo": "sports-tracker",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    ".gitignore",
+    ".nojekyll",
+    "CLAUDE.md",
+    "README.md",
+    "a-league",
+    "apps",
+    "docs",
+    "formula-e",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "tests",
+    "tools",
+    "world-cup"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 1092,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": true
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Working",
+    "family": "Entertainment",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [
+    "docs/handoff-formula-e.md (handoff, not matched by name pattern; docs/START-HERE.md also exists)"
+   ],
+   "tests": {
+    "exists": true,
+    "location": "tests/ (run.js, race.js, tournament.js)",
+    "how_to_run": "node tests/run.js; node tests/race.js; node tests/tournament.js (README; needs Playwright with Chromium at /opt/pw-browsers/chromium)",
+    "kinds": [
+     "playwright headless with stubbed window.claude and in-memory sheet"
+    ]
+   },
+   "build_script": {
+    "path": "tools/build_pages.py",
+    "md5_matches_template": false,
+    "differs_how": "Different: builds 4 Pages copies from apps/*/index.html into hub, a-league, world-cup, formula-e, each with own manifest and icons; also tools/make_icons.py"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32 (per-competition folders; root icons/ has no favicon-32)"
+    ],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "no app.html (sources are apps/*/index.html)": "",
+     "apps/hub/index.html": 7.9,
+     "apps/team-match/index.html": 121.7,
+     "apps/tournament/index.html": 147.1,
+     "apps/race/index.html": 160.9,
+     "index.html (built hub)": 8.8,
+     "a-league/index.html": 122.7,
+     "world-cup/index.html": 148.1,
+     "formula-e/index.html": 161.8
+    }
+   },
+   "theme": {
+    "name_if_any": null,
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--accent",
+     "--accent-next",
+     "--accent-ink",
+     "--accent-2",
+     "--danger",
+     "--win"
+    ],
+    "root_note": "from apps/team-match; no 'Proton' string found in it",
+    "google_fonts_families": {
+     "hub": [
+      "Atkinson Hyperlegible",
+      "Figtree"
+     ],
+     "race": [
+      "Figtree",
+      "Michroma",
+      "Nunito"
+     ],
+     "team-match": [
+      "Rubik",
+      "Lexend",
+      "Nunito"
+     ],
+     "tournament": [
+      "Archivo",
+      "Rubik",
+      "Nunito"
+     ]
+    }
+   },
+   "data_store": "google-sheet",
+   "data_store_note": "One Google Sheet per competition via Sheets API; sheet link pasted into app and stored in browser (race_settings / mbl_config)",
+   "sign_in": {
+    "method": "Google GIS token client (initTokenClient) in team-match and race apps",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "mbl_config",
+     "st-tab",
+     "wc-comp",
+     "wc-tab",
+     "race_settings",
+     "LOGO_KEY-based logo cache (key name via variable)"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": true,
+    "emails": false,
+    "api_keys_or_tokens": false,
+    "note": "CLAUDE.md contains Google Drive logo folder ids (not printed)"
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": true,
+   "status_vocabulary_or_plan_columns": "Matches status uses Played/Postponed (plus others; Scheduled not found in code); Results status blank/DNF/DNS/DSQ/NC; Races has status column; no Plan/Tier/Up-next columns",
+   "id_scheme": "Races id like 2627-R01; Results id is raceId-driver e.g. 2627-R01-ROW; Matches has an id column (scheme not confirmed)",
+   "notable": [
+    "Multi-app repo: 4 pages built from apps/* by a custom build_pages.py, no app.html",
+    "One Google Sheet per competition; backup tabs documented as never-write",
+    "Tests are Playwright scripts with in-memory sheet; no CI workflow"
+   ]
+  },
+  {
+   "repo": "the-big-move",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    ".gitignore",
+    "CLAUDE.md",
+    "README.md",
+    "app.html",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "tests",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 294,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Building",
+    "family": "Life",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [],
+   "tests": {
+    "exists": true,
+    "location": "tests/ (run.js, fake-sheet.js, fake-data.js)",
+    "how_to_run": "node tests/run.js (fake in-memory sheet; screenshots to tests/shots/, gitignored)",
+    "kinds": [
+     "node script with fake sheet, browser screenshots"
+    ]
+   },
+   "build_script": {
+    "path": "tools/build-pages.py",
+    "md5_matches_template": false,
+    "differs_how": "Shorter (33 vs 39 lines): drops starter docstring and 'from html import escape'; different SHORT_NAME/THEME_COLOUR (template md5 93d2b73f91a7df3255f2b1ce16a6f259 at control-room/templates/tools/build-pages.py)"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32",
+     "svg"
+    ],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "app.html": 64,
+     "index.html": 64
+    }
+   },
+   "theme": {
+    "name_if_any": null,
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--accent",
+     "--accent-ink",
+     "--accent-2",
+     "--danger",
+     "--warn",
+     "--display"
+    ],
+    "google_fonts_families": [
+     "Roboto"
+    ]
+   },
+   "data_store": "google-sheet",
+   "data_store_note": "Own Google Sheet 'Ballarat' (tabs Lists, Items, Dates); link entered once and kept in browser (bm_config.sheetId); bm_cache local cache",
+   "sign_in": {
+    "method": "Google GIS token client (spreadsheets scope)",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "bm_config",
+     "bm_cache",
+     "bm_collapsed",
+     "bm_hidedone",
+     "bm_tab",
+     "mbl_config (1 reference)",
+     "token key via this.tokKey"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": false,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": false,
+   "status_vocabulary_or_plan_columns": "Items.status: Not started / Stalled / Done; priority High/Medium/Low/blank; Lists.tab is Prep/Settle/Ballarat; no Plan/Tier/Up-next columns",
+   "id_scheme": "Sheet has id columns (Lists, Items, Dates); generator not found by grep (unknown). Ordering uses fractional 'order' (midpoint on drag)",
+   "notable": [
+    "Fractional order: a drag writes one cell; rows never removed (delete clears cells)",
+    "localStorage prefix bm_ (not wn_/household_); only app with tests/ folder and .gitignore",
+    "Planned to become 'life in Ballarat' after March"
+   ]
+  },
+  {
+   "repo": "the-brain",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    "CLAUDE.md",
+    "README.md",
+    "apple-touch-icon.png",
+    "index.html",
+    "project.json",
+    "supabase",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 481,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Working",
+    "family": "Life",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [
+    "supabase/03-notes-map.sql (name matches NOTES; a SQL migration, not a handover doc)"
+   ],
+   "tests": {
+    "exists": true,
+    "location": "tools/",
+    "how_to_run": "CLAUDE.md: run tools/test.js, tools/test-supabase.js and tools/test-copyback.js before every push (against fakes)",
+    "kinds": [
+     "node script (Sheets mode)",
+     "node script (Supabase mode)",
+     "node script (Supabase to Sheet copy)"
+    ]
+   },
+   "build_script": {
+    "path": null,
+    "md5_matches_template": null,
+    "differs_how": "no build step; index.html is edited directly (no app.html)"
+   },
+   "pwa": {
+    "manifest_exists": false,
+    "icons_present": [
+     "apple-touch-icon"
+    ],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "index.html": 252
+    }
+   },
+   "theme": {
+    "name_if_any": "Own per-month seasonal theme with picker (localStorage brain-theme); not named Proton Seasons in code",
+    "root_css_variable_names": [
+     "--bg",
+     "--a1",
+     "--a2",
+     "--accent",
+     "--fg",
+     "--muted",
+     "--spark",
+     "--eye-hi",
+     "--glass",
+     "--line",
+     "--surface",
+     "--raise"
+    ],
+    "google_fonts_families": [
+     "Roboto"
+    ]
+   },
+   "data_store": "both",
+   "data_store_note": "Supabase (project jcm-apps, schema brain) is the default since 8 Nov 2026; Google Sheet kept as archive and copy target",
+   "sign_in": {
+    "method": "Supabase session (shared) plus Google GIS token client for Sheet mode",
+    "uses_shared_session_key_jcm_sb_session": true,
+    "localStorage_keys": [
+     "brain-sb-session (legacy, migrated)",
+     "brain-theme",
+     "mbl_config",
+     "brain-drafts",
+     "jcm-sb-session (via SB.sesKey)",
+     "config/token keys via this.cfgKey/this.tokKey"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": true,
+    "emails": false,
+    "api_keys_or_tokens": true
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": true,
+   "status_vocabulary_or_plan_columns": "Plan tab columns: ID, Date, End, Time, Title, Category, Type (trailing star marks event), Done, Countdown, Notes; People has Next catch-up, Catch-up plan, Plan ID; no Status/Tier column; Done flag",
+   "id_scheme": "Client-generated: newId(prefix) = prefix + Date.now() base36 + 3 random base36 chars (e.g. 'n...' for notes)",
+   "notable": [
+    "Only repo here with Supabase as default store and a Supabase SQL migrations folder",
+    "Sheet default id and Supabase publishable key are hard-coded in index.html (public repo); other apps keep sheet id in browser settings",
+    "Has backup-before-change copy-back to Sheet (dated hidden backup tab, newest 3 kept); no build script, no manifest"
+   ]
+  },
+  {
+   "repo": "travel-app",
+   "branch_checked_out": "claude/sleepy-mendel-ckj897",
+   "kind": "planning-only",
+   "top_level_entries": [
+    ".gitignore",
+    "CLAUDE.md",
+    "README.md",
+    "project.json",
+    "supabase"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 1600,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": true
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Planning",
+    "family": "Life",
+    "tags": [],
+    "audience": null
+   },
+   "handover_plan_files": [],
+   "tests": {
+    "exists": false,
+    "location": null,
+    "how_to_run": "Planned: tests/unit and tests/e2e (Vitest, Playwright 390px/1280px, offline run)",
+    "kinds": []
+   },
+   "build_script": {
+    "path": null,
+    "md5_matches_template": null,
+    "differs_how": "No app yet; planned Vite+React+TS PWA"
+   },
+   "pwa": {
+    "manifest_exists": false,
+    "icons_present": [],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "supabase/migrations/0001_core.sql": "264 lines",
+     "supabase/migrations/0002_planner_requests.sql": "23 lines"
+    }
+   },
+   "theme": {
+    "name_if_any": "Proton Seasons (dark plus light mode, planned)",
+    "root_css_variable_names": [],
+    "google_fonts_families": []
+   },
+   "data_store": "supabase",
+   "data_store_note": "Schema and RLS migrations exist; app not built; CLAUDE.md says Google Sheet rules do not apply",
+   "sign_in": {
+    "method": "Supabase email 6-digit code (planned)",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": []
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": false,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": false,
+   "status_vocabulary_or_plan_columns": null,
+   "id_scheme": "uuid ids made on the phone",
+   "notable": [
+    "Owns all migrations for shared Supabase tables (trips, cities, visits, ...)",
+    "Has a phase plan inside CLAUDE.md rather than a plan file",
+    "Planning only; branch checked out is a claude/ branch"
+   ]
+  },
+  {
+   "repo": "travel-planner",
+   "branch_checked_out": "claude/blissful-pasteur-5c2oat",
+   "kind": "planning-only",
+   "top_level_entries": [
+    "CLAUDE.md",
+    "docs",
+    "project.json",
+    "supabase"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 1252,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": true
+   },
+   "readme_exists": false,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Planning",
+    "family": "Life",
+    "tags": [
+     "travel"
+    ],
+    "audience": null
+   },
+   "handover_plan_files": [],
+   "tests": {
+    "exists": false,
+    "location": null,
+    "how_to_run": "Planned only: Vitest + Playwright at 390px and 1280px",
+    "kinds": []
+   },
+   "build_script": {
+    "path": null,
+    "md5_matches_template": null,
+    "differs_how": "No app yet; planned Vite+React+TS with vite-plugin-pwa"
+   },
+   "pwa": {
+    "manifest_exists": false,
+    "icons_present": [],
+    "service_worker_exists": false
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "docs/data-model.md": null,
+     "docs/globe.md": null,
+     "supabase/requests/for-travel-app.md": null
+    }
+   },
+   "theme": {
+    "name_if_any": "Proton Seasons (planned tokens)",
+    "root_css_variable_names": [],
+    "google_fonts_families": []
+   },
+   "data_store": "supabase",
+   "data_store_note": "Planned; shares Travel Companion Supabase project; no code yet",
+   "sign_in": {
+    "method": "Supabase email 6-digit code (planned, copied from travel-app)",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "tp_ prefix planned; tp_outbox"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": false,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": false,
+   "status_vocabulary_or_plan_columns": null,
+   "id_scheme": "uuid ids made on the phone (planned)",
+   "notable": [
+    "DRAFT, plan only; no building until Companion Phase 1 freezes mid-Jan 27",
+    "Does not own shared-table migrations; change requests in supabase/requests/",
+    "Branch checked out is a claude/ branch, not main"
+   ]
+  },
+  {
+   "repo": "tv-tracker",
+   "branch_checked_out": "main",
+   "kind": "app",
+   "top_level_entries": [
+    "CLAUDE.md",
+    "README.md",
+    "app.html",
+    "design",
+    "icons",
+    "index.html",
+    "manifest.webmanifest",
+    "project.json",
+    "tests",
+    "tools"
+   ],
+   "claude_md": {
+    "exists": true,
+    "words": 557,
+    "points_to_house_rules": true,
+    "mentions_handover_or_plan_files": false
+   },
+   "readme_exists": true,
+   "project_json": {
+    "exists": true,
+    "fields_present": [
+     "name",
+     "repo",
+     "purpose",
+     "family",
+     "stage",
+     "live",
+     "tags",
+     "updated"
+    ],
+    "stage": "Building",
+    "family": "Entertainment",
+    "tags": [
+     "media-tracker"
+    ],
+    "audience": null
+   },
+   "handover_plan_files": [
+    "design/theme-notes.md"
+   ],
+   "tests": {
+    "exists": true,
+    "location": "tests/",
+    "how_to_run": "README: node tests/smoke.mjs; node tests/dashboard.mjs (others: favourites, layout, library, shelf, tools .mjs)",
+    "kinds": [
+     "playwright smoke against fake sheet fixtures (390px and 1280px, all 13 themes)",
+     "playwright dashboard/layout/library/shelf/favourites/tools scripts"
+    ]
+   },
+   "build_script": {
+    "path": "tools/build-pages.py",
+    "md5_matches_template": false,
+    "differs_how": "Same idea but not the template: lacks the 'Starter copy' docstring and the html.escape import; settings block differs (no SHORT_NAME placeholder at same place)"
+   },
+   "pwa": {
+    "manifest_exists": true,
+    "icons_present": [
+     "apple-touch-icon",
+     "192",
+     "512",
+     "favicon-32"
+    ],
+    "service_worker_exists": false,
+    "note": "manifest icons list only 192 and 512 PNGs; no service worker referenced in app.html (serviceWorker count 0)"
+   },
+   "app_files": {
+    "names_and_sizes_kb": {
+     "app.html": 267,
+     "index.html": 268,
+     "design/themes-board.html": 33
+    }
+   },
+   "theme": {
+    "name_if_any": "13 per-show themes plus plain Default (design/theme-notes.md); not Proton Seasons",
+    "root_css_variable_names": [
+     "--bg",
+     "--surface",
+     "--raise",
+     "--line",
+     "--fg",
+     "--muted",
+     "--accent",
+     "--accent-ink",
+     "--accent-2",
+     "--danger",
+     "--under",
+     "--r"
+    ],
+    "google_fonts_families": [
+     "Atkinson Hyperlegible",
+     "Figtree",
+     "(a further fonts css2 link exists, not expanded)"
+    ]
+   },
+   "data_store": "google-sheet",
+   "data_store_note": "Entertainment Tracker sheet, tabs prefixed with the TV emoji (main, Log, Seasons, Quotes, Settings)",
+   "sign_in": {
+    "method": "Google GIS token client reusing book app Client ID via mbl_config; also claude.ai artifact mcp Google Sheets",
+    "uses_shared_session_key_jcm_sb_session": false,
+    "localStorage_keys": [
+     "mbl_config",
+     "tv-google-token",
+     "tv-tab",
+     "tv-theme",
+     "tv-theme-edits",
+     "tv-theme-custom",
+     "tv-lib-view",
+     "tv-mark"
+    ]
+   },
+   "private_data_in_code": {
+    "sheet_or_project_ids": true,
+    "emails": false,
+    "api_keys_or_tokens": false
+   },
+   "private_data_note": "sheet id is in app.html, CLAUDE.md and tests/*.mjs",
+   "github_workflows": [],
+   "sheet_safety_rules_mentioned": true,
+   "status_vocabulary_or_plan_columns": {
+    "status": [
+     "Coming Soon",
+     "Rewatch",
+     "Watchlist",
+     "Watched",
+     "Watching",
+     "New Season",
+     "Next Up",
+     "DNF",
+     "Paused"
+    ],
+    "plan_columns": [
+     "Plan (Up next, Soon, Someday)",
+     "Up next #",
+     "Why",
+     "How to Watch"
+    ]
+   },
+   "id_scheme": "Permanent number; new show = highest id + 1 (Math.max(0,...ids)+1); ids 1-370 assigned 2026-10-18 in sheet order",
+   "notable": [
+    "Most detailed CLAUDE.md (557 words) embedding full sheet column layout and write rules; the only one with sheet id spelled out in docs",
+    "Extra tabs Log/Seasons/Quotes/Settings; episode-level logging with TVmaze lookups and posters",
+    "Has design/ folder with themes-board and theme-notes"
+   ]
+  }
+ ]
+}
