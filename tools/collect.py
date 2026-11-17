@@ -126,7 +126,9 @@ def get_prs(o, r):
     d = api("/repos/%s/%s/pulls?state=open&per_page=100" % (o, r))
     if d is None:
         return {"count": None, "items": []}
-    return {"count": len(d), "items": [{"title": p.get("title"), "html_url": p.get("html_url")} for p in d]}
+    return {"count": len(d), "items": [{"title": p.get("title"), "html_url": p.get("html_url"),
+                                        "created_at": p.get("created_at"), "updated_at": p.get("updated_at"),
+                                        "draft": bool(p.get("draft"))} for p in d]}
 
 
 def get_ideas(owner, owner_type):

@@ -57,6 +57,24 @@ class ListRepos(unittest.TestCase):
         self.assertFalse(any(c.startswith("/users/") for c in calls))
 
 
+class PullRequests(unittest.TestCase):
+    def test_items_carry_dates_so_age_can_be_worked_out(self):
+        body = [{"title": "Add stuff", "html_url": "https://example.test/pull/1", "created_at": "2026-11-01T00:00:00Z",
+                 "updated_at": "2026-11-02T00:00:00Z", "draft": True, "extra": "ignored"}]
+        api, _ = fake_api({"/repos/o/r/pulls": (200, body)})
+        with mock.patch.object(collect, "api", api):
+            prs = collect.get_prs("o", "r")
+        self.assertEqual(prs["count"], 1)
+        self.assertEqual(prs["items"][0], {"title": "Add stuff", "html_url": "https://example.test/pull/1",
+                                           "created_at": "2026-11-01T00:00:00Z", "updated_at": "2026-11-02T00:00:00Z",
+                                           "draft": True})
+
+    def test_failed_call_gives_unknown_count(self):
+        api, _ = fake_api({})
+        with mock.patch.object(collect, "api", api):
+            self.assertEqual(collect.get_prs("o", "r"), {"count": None, "items": []})
+
+
 class Ideas(unittest.TestCase):
     def test_qualifier(self):
         for kind, q in (("user", "q=user:x+"), ("org", "q=org:x+")):

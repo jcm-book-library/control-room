@@ -7,6 +7,6 @@
 - `HOUSE-RULES.md`: shared rules for all repos.
 - `templates/`: starter files for a new repo.
 - `site/`: the dashboard (static HTML). `tools/collect.py` gathers public repo data into `site/data/repos.json`.
-- `.github/workflows/collect.yml` runs daily, on manual run and on every push to `main`, then publishes `site/` to GitHub Pages (Pages source: GitHub Actions). Data is never committed.
+- `.github/workflows/collect.yml` runs daily, on manual run and on every push to `main`, then publishes `site/` to GitHub Pages (Pages source: GitHub Actions). Data is never committed to `main`: the daily run saves one copy on the `data` branch (a single commit, replaced each day) so sessions can read it with git.
 - `reports/health-latest.md`: written by the weekly health check (through a pull request); the dashboard shows it.
 - No Google Sheets, no sign-in: the dashboard reads public GitHub data only.
