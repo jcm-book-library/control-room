@@ -88,7 +88,7 @@ Done when: [what you'll check].
 Read CLAUDE.md and HANDOVER.md first, tell me in 5 lines where things stand, and wait for my OK before anything big. Don't ask me things you can find in the repo.
 ```
 
-**Finish prompt** (paste at the end of any session):
+**Finish prompt** (paste at the end of any session; then **merge the pull request it opens before starting the new session**, because a new session starts from `main` and can't see an unmerged handover):
 
 ```
 Wrap up this session.
@@ -145,3 +145,4 @@ Each recommendation becomes the standard when this pull request is merged. Say s
 ## Changelog
 
 - **v1, 16 Nov 2026.** First written from the 20 repos as they stood. Sections R, A, T, S and L; decisions D1 to D9.
+- **17 Nov 2026, clarification (no version change).** D1, D6 and D9 decided. Finish prompt: merge the handover's pull request before starting the new session.
