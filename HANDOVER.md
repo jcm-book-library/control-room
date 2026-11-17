@@ -5,22 +5,24 @@ Last rewritten: 17 Nov 2026. Rewrite this file at the end of each session; don't
 ## Where things stand
 - Control Room coordinates the 20 repos in `jcm-book-library`: `HOUSE-RULES.md` (how to work), `STANDARDS.md` (what every repo and app should have, version 1, merged 17 Nov), `templates/`, the dashboard (`site/`, `tools/collect.py`, a daily Action), `supabase/owner-only.sql` (run 14 Nov) and `plans/SUPABASE.md`.
 - `jcm-book-library` is a **personal account, not an organisation**.
-- **Weekly health check:** scheduled task `trig_019nd5opsbeYkCh9jkbNAxgC`, Mondays 7:55am Melbourne (first run 23 Nov), a fresh session each time, push notification to the owner. Its instructions are in `tools/health-check.md` (in the open pull request). **Not tested yet.**
+- **Weekly health check:** scheduled task `trig_019nd5opsbeYkCh9jkbNAxgC`, Mondays 7:55am Melbourne (first run 23 Nov), a fresh session each time, push notification to the owner. Its instructions are in `tools/health-check.md` (in the open pull request). **Not tested yet** (it needs the dashboard workflow run once so the `data` branch exists).
+
+- **Session monitor refresh:** routine `trig_01HSHw43xJYXgdWcbvYAbFmV` (daily 6:51am) is **disabled**. A test run showed scheduled sessions can't read sessions (no `list_sessions` or `get_session`). Refreshing works from an interactive chat: say "refresh the session monitor" and a cheaper helper rebuilds the private page's data in a few minutes.
 
 ## Done in the last stretch
 - Standards v1 merged. D1 (Roboto for all new and rebuilt apps), D6 (Our Library keeps a separate sign-in) and D9 (`main` in the three repos) are decided, and the owner switched the three default branches.
-- Weekly health check built: pull request dates in the collector, a daily copy of the dashboard data on a `data` branch, and `tools/health-check.md`.
+- Weekly health check built and merged (PR #7): pull request dates in the collector, a daily copy of the dashboard data on a `data` branch, and `tools/health-check.md`.
 
 ## Decisions the owner has made (and why)
 - Apps stay in separate repos. One login comes from Supabase, not from merging code. The "hubs" are groups in a shared left rail: Life, Money, Home, Workshop, Entertainment, Travel, Sport.
 - Archive repos you give up on; don't delete them. The dashboard skips archived repos.
 - Lessons become standards through a `standard` issue in this repo, read by the monthly audit.
 - New session at about 50% context. Start and finish prompts are in `STANDARDS.md` section 4.
-- The weekly check opens a pull request only when something needs attention. The part about the owner's sessions is private and goes in the final message only, never in the public repo.
+- The weekly check opens a pull request only when something needs attention. It can't see the owner's sessions (scheduled sessions lack those tools), so the sessions view is the on-demand monitor refresh.
 - The monthly audit gives a report plus proposed fixes; fixes are small per-repo PRs after the owner's OK. Automatic PRs only for mechanical fixes, after about two months.
 
 ## Next steps (in order)
-1. Owner merges the health-check PR, then runs the workflow once (Actions, Collect repo data and publish, Run workflow) so the `data` branch exists. Then fire the trigger once as a test.
+1. Owner runs the dashboard workflow once (Actions, Collect repo data and publish, Run workflow) so the `data` branch exists. Then fire the health-check trigger once as a test.
 2. Read the test run. Can a scheduled session add repos, read sessions and open a PR? Fix what it can't. If push or the GitHub tools aren't available, the report goes in the final message instead.
 3. **Monthly audit:** `tools/audit.py` (no model needed) checks the STANDARDS ids marked *auto* against every repo (ignoring the three build-script settings) and compares with the baseline. A model then proposes fixes. Move the weekly check to fortnightly after 4 weeks, then monthly.
 4. **Left rail:** a small `kit` repo (rail, shared sign-in, theme) loaded by each app at a pinned version. Mock it first. Audience-aware (the database lock is the real security). Phones need a drawer. First across-the-board update.
@@ -28,7 +30,7 @@ Last rewritten: 17 Nov 2026. Rewrite this file at the end of each session; don't
 
 ## Gotchas
 - The sandbox can't reach `jcm-book-library.github.io`, so sessions read dashboard data from the `data` branch with git.
-- Scheduled tasks store no connectors and start with no repos attached.
+- Scheduled sessions: no connectors, no repos attached, no `list_sessions` or `get_session`, and they run on the account's default model (Opus) unless the trigger's model is changed. They can push a phone notification themselves, even when the trigger has notifications off.
 - Our Library is at `ourlibrary.au` and keeps a separate sign-in (D6). Its `HANDOVER.md` is about 3,500 words and needs trimming (D7).
 - Never put the owner's email in this public repo.
 
