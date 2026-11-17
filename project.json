@@ -6,5 +6,7 @@
   "stage": "Building",
   "live": "https://jcm-book-library.github.io/control-room/",
   "tags": [],
-  "updated": "2026-10-19"
+  "audience": "public",
+  "standards": 1,
+  "updated": "2026-11-16"
 }

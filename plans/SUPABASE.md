@@ -132,6 +132,6 @@ Family members will be real accounts in the same Supabase Auth (Our Library invi
 - [x] Weekly backup: the Copy Supabase → Sheet button; the GitHub Action export is deferred.
 - [x] Books' claude.ai artifact: frozen read-only.
 - [x] Every app except Our Library is owner-only: `supabase/owner-only.sql`; each new app's schema is added to its list as it moves (section 8).
-- [ ] Run `supabase/owner-only.sql` in Supabase before the first family member signs in (trial planned about 27 Nov 2026).
+- [x] Run `supabase/owner-only.sql` in Supabase (done 14 Nov 2026; The Brain still works). Still to do: when the first family account exists, sign in to The Brain with it and confirm it shows nothing and can't save.
 - [ ] Keep-awake ping from the daily Control Room run: only if it pauses again.
 - [ ] "Switch over" for Books: say it once the copy says Supabase matches your Sheet.
