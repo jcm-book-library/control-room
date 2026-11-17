@@ -1,47 +1,45 @@
 # Control Room: handover
 
-Last rewritten: 16 Nov 2026. Rewrite this file at the end of each session; don't add to it.
+Last rewritten: 17 Nov 2026. Rewrite this file at the end of each session; don't add to it.
 
 ## Where things stand
-- Control Room is the coordination repo for the 20 repos in `jcm-book-library`: `HOUSE-RULES.md` (how to work), `STANDARDS.md` (what every repo and app should have, version 1, in PR #6), `templates/`, the dashboard (`site/` plus `tools/collect.py`, rebuilt daily by a GitHub Action), `supabase/owner-only.sql` and `plans/SUPABASE.md`.
-- `jcm-book-library` is a **personal account, not an organisation**. The collector uses the user-account endpoints.
-- No scheduled tasks exist yet. The weekly health check and monthly audit are agreed in principle but not created.
+- Control Room coordinates the 20 repos in `jcm-book-library`: `HOUSE-RULES.md` (how to work), `STANDARDS.md` (what every repo and app should have, version 1, merged 17 Nov), `templates/`, the dashboard (`site/`, `tools/collect.py`, a daily Action), `supabase/owner-only.sql` (run 14 Nov) and `plans/SUPABASE.md`.
+- `jcm-book-library` is a **personal account, not an organisation**.
+- **Weekly health check:** scheduled task `trig_019nd5opsbeYkCh9jkbNAxgC`, Mondays 7:55am Melbourne (first run 23 Nov), a fresh session each time, push notification to the owner. Its instructions are in `tools/health-check.md` (in the open pull request). **Not tested yet.**
 
 ## Done in the last stretch
-- Owner-only lock for Supabase (PR #5, merged, run in Supabase on 14 Nov, The Brain still works). 94 tests in `tests/sql/owner-only.sh`.
-- STANDARDS.md v1, templates and house-rules section 8 (PR #6), with a baseline of all 20 repos in `reports/baseline-2026-11-16.json`.
+- Standards v1 merged. D1 (Roboto for all new and rebuilt apps), D6 (Our Library keeps a separate sign-in) and D9 (`main` in the three repos) are decided, and the owner switched the three default branches.
+- Weekly health check built: pull request dates in the collector, a daily copy of the dashboard data on a `data` branch, and `tools/health-check.md`.
 
 ## Decisions the owner has made (and why)
-- Apps stay in separate repos. One login comes from Supabase, not from merging code. The "hubs" are groups in a shared left rail: Life, Money, Home, Workshop, Entertainment, Travel, Sport. Big merged codebases would fill sessions faster.
-- Archive repos you give up on (Settings, Danger Zone); don't delete. The dashboard skips archived repos.
-- Lessons become standards through a `standard` issue in this repo, read by the monthly audit. The owner decides.
-- Sessions: start a new one at about 50% context. Start and finish prompts are in `STANDARDS.md` section 4.
-- Weekly check is report-only. The monthly audit gives a report plus proposed fixes. Fixes are small PRs, one per repo, after the owner's OK. Automatic PRs only for mechanical fixes, after about two months.
+- Apps stay in separate repos. One login comes from Supabase, not from merging code. The "hubs" are groups in a shared left rail: Life, Money, Home, Workshop, Entertainment, Travel, Sport.
+- Archive repos you give up on; don't delete them. The dashboard skips archived repos.
+- Lessons become standards through a `standard` issue in this repo, read by the monthly audit.
+- New session at about 50% context. Start and finish prompts are in `STANDARDS.md` section 4.
+- The weekly check opens a pull request only when something needs attention. The part about the owner's sessions is private and goes in the final message only, never in the public repo.
+- The monthly audit gives a report plus proposed fixes; fixes are small per-repo PRs after the owner's OK. Automatic PRs only for mechanical fixes, after about two months.
 
 ## Next steps (in order)
-1. Owner reads and merges PR #6. D1 (Roboto for all new and rebuilt apps), D6 (separate sign-in for Our Library) and D9 (`main` in three repos) are decided; D2 to D5, D7 and D8 take the recommendations unless the owner says otherwise.
-2. **D9:** `main` was created from the session branch in `travel-app` and `travel-planner` on 16 Nov 2026 (`shopping-list` already had one, with two newer commits still on its session branch). The owner still switches each of the three repos' default branch to `main` in GitHub settings, and turns on Pages from `main` where an app is live.
-3. **Weekly health check:** Mondays 7:55am Melbourne (cron is UTC), a fresh session on a cheaper model, writes `reports/health-latest.md` through a PR into this repo, notifies the owner only if something needs them. Fortnightly after 4 weeks, then monthly.
-4. **Monthly audit:** a script (`tools/audit.py`, no model needed) checks the STANDARDS ids marked *auto* against every repo (ignoring the three build-script settings) and compares with the baseline. A model then proposes fixes. On the first run, find out whether a scheduled session can write to the other repos; if not, it stays report-only.
-5. **Left rail:** a small `kit` repo (rail, shared sign-in, theme) loaded by each app at a pinned version. Mock it first. It shows each person only the apps their `audience` allows (the database lock is the real security). Phones need a drawer. It is the first across-the-board update.
-6. Add `shopping-list`, `the-big-move`, `travel-app` and `travel-planner` to the owner's App Board (a private claude.ai page).
+1. Owner merges the health-check PR, then runs the workflow once (Actions, Collect repo data and publish, Run workflow) so the `data` branch exists. Then fire the trigger once as a test.
+2. Read the test run. Can a scheduled session add repos, read sessions and open a PR? Fix what it can't. If push or the GitHub tools aren't available, the report goes in the final message instead.
+3. **Monthly audit:** `tools/audit.py` (no model needed) checks the STANDARDS ids marked *auto* against every repo (ignoring the three build-script settings) and compares with the baseline. A model then proposes fixes. Move the weekly check to fortnightly after 4 weeks, then monthly.
+4. **Left rail:** a small `kit` repo (rail, shared sign-in, theme) loaded by each app at a pinned version. Mock it first. Audience-aware (the database lock is the real security). Phones need a drawer. First across-the-board update.
+5. Add `shopping-list`, `the-big-move`, `travel-app` and `travel-planner` to the owner's App Board (a private claude.ai page).
 
 ## Gotchas
-- Our Library is at `ourlibrary.au`. Sign-in storage is per address, so it cannot share a session with the apps on `jcm-book-library.github.io`. The owner accepted a separate sign-in (D6); the rail links out to it.
-- Our Library's `HANDOVER.md` is about 3,500 words and holds reference material. Trim it (D7).
-- A session can only change repos it was started with. Adding repos mid-session was refused once; adding `control-room` worked when asked directly.
-- Never put the owner's email in this public repo. `owner-only.sql` has a placeholder; the filled copy is given in chat.
+- The sandbox can't reach `jcm-book-library.github.io`, so sessions read dashboard data from the `data` branch with git.
+- Scheduled tasks store no connectors and start with no repos attached.
+- Our Library is at `ourlibrary.au` and keeps a separate sign-in (D6). Its `HANDOVER.md` is about 3,500 words and needs trimming (D7).
+- Never put the owner's email in this public repo.
 
 ## Open questions for the owner
-- D1 to D9 in `STANDARDS.md` section 7.
-- Yes or no to creating the weekly health check, once PR #6 is merged.
-- Whether the owner has switched the three default branches and where `shopping-list` is live (its session branch is ahead of `main`).
+- Keep "PR only when something needs attention", or one every week?
+- D2 to D5, D7 and D8 take the recommendations unless the owner says otherwise.
 
 ## Files that matter
-- `STANDARDS.md`: the standard, session prompts, baseline, decisions.
-- `reports/baseline-2026-11-16.json`: the audit's starting facts for all 20 repos.
-- `plans/SUPABASE.md`: moving apps to Supabase, and the owner-only lock (section 8).
-- `tools/collect.py` and `.github/workflows/collect.yml`: the dashboard data.
+- `tools/health-check.md`, `tools/collect.py`, `.github/workflows/collect.yml`: the weekly check and its data.
+- `STANDARDS.md`, `reports/baseline-2026-11-16.json`: the standard and the audit's starting facts.
+- `plans/SUPABASE.md`: moving apps to Supabase and the owner-only lock.
 
 ## Start the next session with
-> Repo: control-room. Task: set up the weekly health check and the monthly audit script against STANDARDS.md. Size: one stage. Done when: the weekly task is scheduled, the audit script lists which repos are behind, and I've seen the first report. Read CLAUDE.md and HANDOVER.md first.
+> Repo: control-room. Task: build the monthly audit script (`tools/audit.py`) against STANDARDS.md. Size: one stage. Done when: it lists which repos are behind the standard and the baseline comparison is in the report. Read CLAUDE.md and HANDOVER.md first.
