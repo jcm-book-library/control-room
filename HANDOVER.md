@@ -27,7 +27,6 @@ Last rewritten: 17 Nov 2026. Rewrite this file at the end of each session; don't
 2. **Monthly audit:** `tools/audit.py` (no model needed) checks the STANDARDS ids marked *auto* against every repo (ignoring the three build-script settings) and compares with `reports/baseline-2026-11-16.json`. A model then proposes fixes. Move the weekly check to fortnightly after 4 weeks, then monthly.
 3. **Left rail:** a small `kit` repo (rail, shared sign-in, theme) loaded by each app at a pinned version. Mock it first. It shows each person only the apps their `audience` allows (the database lock is the real security). Phones need a drawer. First across-the-board update.
 4. Add `shopping-list`, `the-big-move`, `travel-app` and `travel-planner` to the App Board.
-5. Hand over the chats the monitor shows over 50% context, one repo at a time.
 
 ## Gotchas
 - The sandbox can't reach `jcm-book-library.github.io`, so sessions read dashboard data from the `data` branch with git.
