@@ -2,12 +2,12 @@
 
 Run by a scheduled task every Monday at 7:55am Melbourne time, as a fresh session. **Nobody is watching it run, so don't ask questions.** The owner is not a coder: plain Australian English, action items first, exact clicks.
 
-This is the *weekly* check: facts about the repos, plus a look at the owner's sessions. The *monthly audit* (checking repos against `STANDARDS.md`) is separate.
+This is the *weekly* check: facts about the repos. The *monthly audit* (checking repos against `STANDARDS.md`) is separate.
 
 ## Rules
 
 - **Read-only everywhere**, except one pull request into `control-room` that adds `reports/health-latest.md`, and only when the check finds something. Never merge it.
-- **`control-room` is a public repo.** The report holds public repo facts only: no emails, ids, keys, or anything from the owner's sessions (titles and summaries are private).
+- **`control-room` is a public repo.** The report holds public repo facts only: no emails, ids or keys.
 - Never put model names in commits or PRs.
 - If an action is refused (for example, push access to `control-room`), don't work around it. Say what was blocked in the final message and give the report text there instead.
 
@@ -42,13 +42,9 @@ Work out dates with Python (`python3 -I`), not by eye.
 
 Don't list charter or standards gaps here. The monthly audit does that.
 
-## 3. The owner's sessions (private: final message only, never in the repo)
+## 3. The owner's sessions (not available here)
 
-Use `list_sessions` and `get_session` if you have them. Skip archived sessions and this one.
-- **Waiting on the owner for more than 5 days:** title, how long, and what it needs in a few words.
-- **Context at or over 50%** (`external_metadata.context_usage.used_tokens` out of `max_tokens`): title and the percentage. Suggest handing over: ask it to rewrite `HANDOVER.md`, then start a fresh session.
-
-If you can't see sessions, say so in one line.
+A scheduled session does **not** have `list_sessions` or `get_session` (tested 17 Nov 2026), so don't search for them. Say in one line in the final message that sessions weren't checked, and that the owner can say "refresh the session monitor" in a Control Room chat for the sessions view.
 
 ## 4. Output
 
@@ -76,6 +72,5 @@ GOOD TO KNOW
 
 Under 250 words:
 1. **Do this first:** the Needs-you items as numbered steps with exact clicks and links (or "Nothing needs you").
-2. **Sessions:** the private items from step 3.
-3. **Worth a look and good to know**, one line each.
-4. One line saying whether a pull request was opened (with the link) and anything you couldn't check.
+2. **Worth a look and good to know**, one line each.
+3. One line saying whether a pull request was opened (with the link), that sessions weren't checked (section 3), and anything else you couldn't check.
