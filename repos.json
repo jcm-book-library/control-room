@@ -1,0 +1,1009 @@
+{
+ "generated_at": "2026-11-21T00:48:46Z",
+ "owner": "jcm-book-library",
+ "owner_type": "user",
+ "repos": [
+  {
+   "name": "album-tracker",
+   "html_url": "https://github.com/jcm-book-library/album-tracker",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-10-30T22:57:21Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "da64ff4b3cb6c60acb8c8a659e3d8b8ffc97e981",
+    "date": "2026-10-30T22:57:21Z",
+    "message": "Merge pull request #9 from jcm-book-library/claude/quirky-archimedes-fqo1oo"
+   },
+   "charter": {
+    "name": "Music Collection",
+    "repo": "album-tracker",
+    "purpose": "Logs album listening and keeps a collection of albums and tracklists, backed by the Entertainment Tracker Google Sheet.",
+    "family": "Entertainment",
+    "stage": "Building",
+    "live": "https://jcm-book-library.github.io/album-tracker/",
+    "tags": [
+     "media-tracker"
+    ],
+    "updated": "2026-10-24"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/album-tracker/actions/runs/41141449388",
+    "created_at": "2026-10-30T22:57:23Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/album-tracker/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 21,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "Bag-and-Tag",
+   "html_url": "https://github.com/jcm-book-library/Bag-and-Tag",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-16T03:38:31Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "0d5e1cf6b13fbcf067367db9f0ffe669782dcb49",
+    "date": "2026-11-16T03:38:31Z",
+    "message": "Merge pull request #3 from jcm-book-library/claude/clever-euler-yh0r3k"
+   },
+   "charter": {
+    "name": "Bag & Tag",
+    "repo": "Bag-and-Tag",
+    "purpose": "Tracks bags while tearing down and rebuilding big LEGO sets and prints the bag labels, storing data in the browser with an optional Google Sheet copy.",
+    "family": "Hobby",
+    "stage": "Working",
+    "live": "https://jcm-book-library.github.io/Bag-and-Tag/",
+    "tags": [],
+    "updated": "2026-10-19"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/Bag-and-Tag/actions/runs/43799404072",
+    "created_at": "2026-11-16T03:38:34Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/Bag-and-Tag/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 4,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "control-room",
+   "html_url": "https://github.com/jcm-book-library/control-room",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-20T01:17:11Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "a7dd473266b57bfd845a1f86d7934a63e3c4a321",
+    "date": "2026-11-17T03:04:45Z",
+    "message": "Merge pull request #9 from jcm-book-library/claude/handover-17-nov"
+   },
+   "charter": {
+    "name": "Control Room",
+    "repo": "control-room",
+    "purpose": "Dashboard of every jcm-book-library repo, plus the shared house rules and templates for new repos.",
+    "family": "Admin",
+    "stage": "Building",
+    "live": "https://jcm-book-library.github.io/control-room/",
+    "tags": [],
+    "audience": "public",
+    "standards": 1,
+    "updated": "2026-11-16"
+   },
+   "latest_run": {
+    "name": "Collect repo data and publish",
+    "status": "in_progress",
+    "conclusion": null,
+    "html_url": "https://github.com/jcm-book-library/control-room/actions/runs/44846259905",
+    "created_at": "2026-11-21T00:48:37Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/control-room/",
+    "build_type": "workflow",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 3,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "daily-paper",
+   "html_url": "https://github.com/jcm-book-library/daily-paper",
+   "description": "Web sourced news dashboard in the style of a daily newspaper",
+   "default_branch": "main",
+   "pushed_at": "2026-11-17T03:14:27Z",
+   "open_issues_count": 1,
+   "main": {
+    "exists": true,
+    "sha": "4259f967e621b5c4e1c0c89dc1a52208d09eabc1",
+    "date": "2026-11-07T03:10:08Z",
+    "message": "Merge pull request #4 from jcm-book-library/claude/keen-davinci-d37y1a"
+   },
+   "charter": {
+    "name": "The Overnight Sentinel",
+    "repo": "daily-paper",
+    "purpose": "Builds a newspaper-style front page of news, sport and weather headlines three times a day and publishes it to GitHub Pages.",
+    "family": "Life",
+    "stage": "Working",
+    "live": "https://jcm-book-library.github.io/daily-paper/",
+    "tags": [],
+    "updated": "2026-10-19"
+   },
+   "latest_run": {
+    "name": "Print the paper",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/daily-paper/actions/runs/44843031772",
+    "created_at": "2026-11-21T00:19:20Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/daily-paper/",
+    "build_type": "workflow",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 1,
+    "items": [
+     {
+      "title": "Add a handover for the next session",
+      "html_url": "https://github.com/jcm-book-library/daily-paper/pull/5",
+      "created_at": "2026-11-17T03:14:34Z",
+      "updated_at": "2026-11-17T03:14:34Z",
+      "draft": false
+     }
+    ]
+   },
+   "health": [],
+   "days_quiet": 13,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "game-tracker",
+   "html_url": "https://github.com/jcm-book-library/game-tracker",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-10-25T08:25:41Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "937c002c80d43759f7b2d8c067c497ac0fd0ccab",
+    "date": "2026-10-25T08:25:41Z",
+    "message": "Merge pull request #3 from jcm-book-library/claude/ecstatic-archimedes-w97swk"
+   },
+   "charter": {
+    "name": "Game Tracker",
+    "repo": "game-tracker",
+    "purpose": "Logs gaming and keeps a library of games, backed by the Entertainment Tracker Google Sheet.",
+    "family": "Entertainment",
+    "stage": "Building",
+    "live": "https://jcm-book-library.github.io/game-tracker/",
+    "tags": [
+     "media-tracker"
+    ],
+    "updated": "2026-10-23"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/game-tracker/actions/runs/40176573513",
+    "created_at": "2026-10-25T08:25:44Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/game-tracker/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 26,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "household",
+   "html_url": "https://github.com/jcm-book-library/household",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-10-23T03:52:46Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "0c95ccc4c4f6dba172413e649335cc423b73bdce",
+    "date": "2026-10-23T03:52:46Z",
+    "message": "Merge pull request #3 from jcm-book-library/claude/dreamy-ptolemy-jivms9"
+   },
+   "charter": {
+    "name": "Household",
+    "repo": "household",
+    "purpose": "Week view of household jobs, cleaning-zone rotation, bins and groceries; data lives in its own Google Sheet.",
+    "family": "Home",
+    "stage": "Building",
+    "live": "https://jcm-book-library.github.io/household/",
+    "tags": [],
+    "updated": "2026-10-23"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/household/actions/runs/39897341907",
+    "created_at": "2026-10-23T03:52:49Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/household/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 28,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "investments",
+   "html_url": "https://github.com/jcm-book-library/investments",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-20T16:14:51Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "e275674d9837754a81786fbccd0944d1c636acf9",
+    "date": "2026-11-20T16:14:49Z",
+    "message": "Update prices 2026-11-20"
+   },
+   "charter": {
+    "name": "Compound",
+    "repo": "investments",
+    "purpose": "An investment watchlist with ETF price history, holdings and learning notes, backed by a private Google Sheet and prices saved in the repo.",
+    "family": "Finance",
+    "stage": "Working",
+    "live": "https://jcm-book-library.github.io/investments/",
+    "tags": [],
+    "updated": "2026-10-19"
+   },
+   "latest_run": {
+    "name": "Update prices",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/investments/actions/runs/44771286042",
+    "created_at": "2026-11-20T16:14:05Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/investments/",
+    "build_type": "workflow",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 0,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "my-book-library",
+   "html_url": "https://github.com/jcm-book-library/my-book-library",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-18T10:08:01Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "8eded2d1384aa56f1e401071758897418aa62c0e",
+    "date": "2026-11-18T10:08:01Z",
+    "message": "Merge pull request #22 from jcm-book-library/claude/zen-dijkstra-tfmik3"
+   },
+   "charter": {
+    "name": "Our Library",
+    "repo": "my-book-library",
+    "purpose": "Logs reading and keeps a library and dashboard of books, moving from the Entertainment Tracker Google Sheet to Supabase.",
+    "family": "Entertainment",
+    "stage": "Mature",
+    "live": "https://ourlibrary.au/",
+    "tags": [
+     "media-tracker"
+    ],
+    "updated": "2026-11-08"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/my-book-library/actions/runs/44282470917",
+    "created_at": "2026-11-18T10:08:03Z"
+   },
+   "pages": {
+    "html_url": "https://ourlibrary.au/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 2,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "my-film-library",
+   "html_url": "https://github.com/jcm-book-library/my-film-library",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-07T09:36:54Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "d96a3aa19dddb011b1d6921383b7d27ed9e9df52",
+    "date": "2026-11-07T09:36:54Z",
+    "message": "Merge pull request #9 from jcm-book-library/claude/festive-allen-ba45jq"
+   },
+   "charter": {
+    "name": "Film Vault",
+    "repo": "my-film-library",
+    "purpose": "Film diary, library, plan and dashboard (log, edit and add films, Up next, stats) backed by the Entertainment Tracker Google Sheet; Tools and Discover come next.",
+    "family": "Entertainment",
+    "stage": "Building",
+    "live": "https://jcm-book-library.github.io/my-film-library/",
+    "tags": [
+     "media-tracker"
+    ],
+    "updated": "2026-10-25"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/my-film-library/actions/runs/42360486563",
+    "created_at": "2026-11-07T09:36:56Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/my-film-library/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 13,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "Pantry-Plate",
+   "html_url": "https://github.com/jcm-book-library/Pantry-Plate",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-10-20T04:58:03Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "2d0d715ab4c8b0e12edf5e3411768f8bc78418c6",
+    "date": "2026-10-20T04:58:03Z",
+    "message": "Merge pull request #1 from jcm-book-library/claude/vibrant-faraday-68j1x1"
+   },
+   "charter": {
+    "name": "Pantry & Plate",
+    "repo": "Pantry-Plate",
+    "purpose": "A kitchen app for the pantry, shopping list and recipes in Australian measures, backed by the Pantry & Plate Google Sheet.",
+    "family": "Home",
+    "stage": "Working",
+    "live": "https://jcm-book-library.github.io/Pantry-Plate/",
+    "tags": [],
+    "updated": "2026-10-19"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/Pantry-Plate/actions/runs/39881273465",
+    "created_at": "2026-10-23T00:58:21Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/Pantry-Plate/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 31,
+   "quiet": true,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "Personal-budget",
+   "html_url": "https://github.com/jcm-book-library/Personal-budget",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-17T03:17:11Z",
+   "open_issues_count": 1,
+   "main": {
+    "exists": true,
+    "sha": "14ba15ebc956536c68b624801bd316144be67e8a",
+    "date": "2026-10-20T04:55:33Z",
+    "message": "Merge pull request #1 from jcm-book-library/claude/vibrant-faraday-68j1x1"
+   },
+   "charter": {
+    "name": "Coin & Compass",
+    "repo": "Personal-budget",
+    "purpose": "A budget, buy list, savings goals, investments and super app, backed by the Personal Budget Google Sheet.",
+    "family": "Finance",
+    "stage": "Building",
+    "live": "https://jcm-book-library.github.io/Personal-budget/",
+    "tags": [],
+    "updated": "2026-10-19"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/Personal-budget/actions/runs/39882349318",
+    "created_at": "2026-10-23T01:09:07Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/Personal-budget/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 1,
+    "items": [
+     {
+      "title": "Buy list tab, safer sheet writes, tests and handover",
+      "html_url": "https://github.com/jcm-book-library/Personal-budget/pull/2",
+      "created_at": "2026-11-17T03:17:29Z",
+      "updated_at": "2026-11-17T03:17:29Z",
+      "draft": false
+     }
+    ]
+   },
+   "health": [],
+   "days_quiet": 31,
+   "quiet": true,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "recall-arcade",
+   "html_url": "https://github.com/jcm-book-library/recall-arcade",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-17T03:19:59Z",
+   "open_issues_count": 2,
+   "main": {
+    "exists": true,
+    "sha": "ed48387c783b64b985c9553251a684966528f071",
+    "date": "2026-11-14T08:14:38Z",
+    "message": "Merge pull request #51 from jcm-book-library/claude/lucid-mccarthy-c425ho"
+   },
+   "charter": {
+    "name": "Recall Arcade",
+    "repo": "recall-arcade",
+    "purpose": "Short timed learning games, such as a name-every-country map quiz, that are replayed until the answers stick; progress is saved in the browser.",
+    "family": "Learning",
+    "stage": "Working",
+    "live": "https://jcm-book-library.github.io/recall-arcade/",
+    "tags": [],
+    "updated": "2026-11-02"
+   },
+   "latest_run": {
+    "name": "Deploy to GitHub Pages",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/recall-arcade/actions/runs/43574865422",
+    "created_at": "2026-11-14T08:14:40Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/recall-arcade/",
+    "build_type": "workflow",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 2,
+    "items": [
+     {
+      "title": "Docs: session handover (where we are, decisions, next steps, gotchas)",
+      "html_url": "https://github.com/jcm-book-library/recall-arcade/pull/53",
+      "created_at": "2026-11-17T03:20:07Z",
+      "updated_at": "2026-11-17T03:20:07Z",
+      "draft": false
+     },
+     {
+      "title": "Rewrite the handover (17 Nov 2026)",
+      "html_url": "https://github.com/jcm-book-library/recall-arcade/pull/52",
+      "created_at": "2026-11-17T03:17:30Z",
+      "updated_at": "2026-11-17T03:17:30Z",
+      "draft": false
+     }
+    ]
+   },
+   "health": [],
+   "days_quiet": 6,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "Sawdust-Soil",
+   "html_url": "https://github.com/jcm-book-library/Sawdust-Soil",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-10-20T04:58:29Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "8eaf0ad608a529a6e17197c59dbca52447f7c03e",
+    "date": "2026-10-20T04:58:29Z",
+    "message": "Merge pull request #1 from jcm-book-library/claude/vibrant-faraday-68j1x1"
+   },
+   "charter": {
+    "name": "Sawdust & Soil",
+    "repo": "Sawdust-Soil",
+    "purpose": "Woodwork plans, a garden bed planner and a monthly Ballarat calendar, backed by the Sawdust & Soil Google Sheet.",
+    "family": "Home",
+    "stage": "Working",
+    "live": "https://jcm-book-library.github.io/Sawdust-Soil/",
+    "tags": [],
+    "updated": "2026-10-19"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/Sawdust-Soil/actions/runs/39879907728",
+    "created_at": "2026-10-23T00:44:31Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/Sawdust-Soil/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 31,
+   "quiet": true,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "shopping-list",
+   "html_url": "https://github.com/jcm-book-library/shopping-list",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-08T01:55:00Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "4f80db75a0c6a6e1a9b368f2fde591d73a974515",
+    "date": "2026-11-08T01:55:00Z",
+    "message": "Merge pull request #2 from jcm-book-library/claude/focused-feynman-13jm0b"
+   },
+   "charter": {
+    "name": "Want & Need",
+    "repo": "shopping-list",
+    "purpose": "Every future purchase in one place: needs and wants by category and time frame, with links, photos, a tick-off checklist and totals that feed the budget app; data lives in its own Google Sheet tabs.",
+    "family": "Finance",
+    "stage": "Building",
+    "live": "https://jcm-book-library.github.io/shopping-list/",
+    "tags": [],
+    "updated": "2026-11-07"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/shopping-list/actions/runs/42436283957",
+    "created_at": "2026-11-08T01:55:03Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/shopping-list/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 12,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "sports-tracker",
+   "html_url": "https://github.com/jcm-book-library/sports-tracker",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-17T03:15:48Z",
+   "open_issues_count": 1,
+   "main": {
+    "exists": true,
+    "sha": "4f606a03ca99dcfcef237620a906bb1269c417d9",
+    "date": "2026-11-03T00:48:31Z",
+    "message": "Merge pull request #16 from jcm-book-library/claude/exciting-gates-8tn0dt"
+   },
+   "charter": {
+    "name": "Sports Tracker",
+    "repo": "sports-tracker",
+    "purpose": "Tracks results, ladders and stats for the sports competitions the owner follows, with one Google Sheet per competition.",
+    "family": "Entertainment",
+    "stage": "Working",
+    "live": "https://jcm-book-library.github.io/sports-tracker/",
+    "tags": [],
+    "updated": "2026-10-19"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/sports-tracker/actions/runs/41555466440",
+    "created_at": "2026-11-03T00:48:34Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/sports-tracker/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 1,
+    "items": [
+     {
+      "title": "Session handover: HANDOVER.md and CLAUDE.md pointer",
+      "html_url": "https://github.com/jcm-book-library/sports-tracker/pull/17",
+      "created_at": "2026-11-17T03:15:53Z",
+      "updated_at": "2026-11-17T03:15:53Z",
+      "draft": false
+     }
+    ]
+   },
+   "health": [],
+   "days_quiet": 18,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "the-big-move",
+   "html_url": "https://github.com/jcm-book-library/the-big-move",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-01T04:19:16Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "d96086b1d6aad5680d2d0994e71938f85d7fb5d8",
+    "date": "2026-11-01T04:18:18Z",
+    "message": "Ballarat app: move planner with drag-and-drop lists, statuses, priorities and key dates"
+   },
+   "charter": {
+    "name": "Ballarat",
+    "repo": "the-big-move",
+    "purpose": "Plans the move to Ballarat (prep, settling in) and keeps a list of things to do there, backed by the Ballarat Google Sheet.",
+    "family": "Life",
+    "stage": "Building",
+    "live": "https://jcm-book-library.github.io/the-big-move/",
+    "tags": [],
+    "updated": "2026-11-01"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/the-big-move/actions/runs/41275765789",
+    "created_at": "2026-11-01T05:08:40Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/the-big-move/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 19,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "the-brain",
+   "html_url": "https://github.com/jcm-book-library/the-brain",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-17T02:16:56Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "9d18b97861514770e274aa96c06c432ef6ec823f",
+    "date": "2026-11-17T02:16:55Z",
+    "message": "Merge pull request #17 from jcm-book-library/claude/upbeat-mccarthy-qcth7u"
+   },
+   "charter": {
+    "name": "The Brain",
+    "repo": "the-brain",
+    "purpose": "Week planner, daily log and people tracker on one page; data in Supabase (jcm-apps, schema brain), with the Google Sheet kept as a weekly-copied archive.",
+    "family": "Life",
+    "stage": "Working",
+    "live": "https://jcm-book-library.github.io/the-brain/",
+    "tags": [],
+    "updated": "2026-11-17"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/the-brain/actions/runs/44001820663",
+    "created_at": "2026-11-17T02:16:58Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/the-brain/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 3,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "travel-app",
+   "html_url": "https://github.com/jcm-book-library/travel-app",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-16T23:59:11Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "bcc0c629b269104c3d65333d14db24ae053394d0",
+    "date": "2026-11-14T06:34:35Z",
+    "message": "Add 0002 migration for planner requests: draft trips, country codes, optional city tz"
+   },
+   "charter": {
+    "name": "Travel Companion",
+    "repo": "travel-app",
+    "purpose": "Phone-first trip itinerary, meeting points and visited-places log for two travellers; data lives in Supabase.",
+    "family": "Life",
+    "stage": "Planning",
+    "live": null,
+    "tags": [],
+    "updated": "2026-10-26"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/travel-app/actions/runs/43985134269",
+    "created_at": "2026-11-17T00:08:10Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/travel-app/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 6,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "travel-planner",
+   "html_url": "https://github.com/jcm-book-library/travel-planner",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-16T23:59:12Z",
+   "open_issues_count": 0,
+   "main": {
+    "exists": true,
+    "sha": "8547a5e1aa221f4086e2756e2f902742be40c5dc",
+    "date": "2026-11-14T06:50:45Z",
+    "message": "Globe: record owner's asks and lessons from the mock-up"
+   },
+   "charter": {
+    "name": "Travel Planner",
+    "repo": "travel-planner",
+    "purpose": "Plan trips, keep a private ideas inbox and a lifetime log of places visited; partner to the Travel Companion, sharing its Supabase project.",
+    "family": "Life",
+    "stage": "Planning",
+    "live": null,
+    "tags": [
+     "travel"
+    ],
+    "updated": "2026-10-26"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/travel-planner/actions/runs/43985084837",
+    "created_at": "2026-11-17T00:07:49Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/travel-planner/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 0,
+    "items": []
+   },
+   "health": [],
+   "days_quiet": 6,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  },
+  {
+   "name": "tv-tracker",
+   "html_url": "https://github.com/jcm-book-library/tv-tracker",
+   "description": null,
+   "default_branch": "main",
+   "pushed_at": "2026-11-17T03:17:59Z",
+   "open_issues_count": 1,
+   "main": {
+    "exists": true,
+    "sha": "0dc5bbdb77833108d9e929dd9d0d5de30be95050",
+    "date": "2026-11-07T10:44:51Z",
+    "message": "Merge pull request #10 from jcm-book-library/claude/blissful-ride-jh842w"
+   },
+   "charter": {
+    "name": "TV Tracker",
+    "repo": "tv-tracker",
+    "purpose": "Logs TV watching and keeps a library of shows, backed by the Entertainment Tracker Google Sheet.",
+    "family": "Entertainment",
+    "stage": "Building",
+    "live": "https://jcm-book-library.github.io/tv-tracker/",
+    "tags": [
+     "media-tracker"
+    ],
+    "updated": "2026-10-19"
+   },
+   "latest_run": {
+    "name": "pages build and deployment",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/jcm-book-library/tv-tracker/actions/runs/42365248763",
+    "created_at": "2026-11-07T10:44:54Z"
+   },
+   "pages": {
+    "html_url": "https://jcm-book-library.github.io/tv-tracker/",
+    "build_type": "legacy",
+    "source": {
+     "branch": "main"
+    }
+   },
+   "pull_requests": {
+    "count": 1,
+    "items": [
+     {
+      "title": "Handover for the next session",
+      "html_url": "https://github.com/jcm-book-library/tv-tracker/pull/11",
+      "created_at": "2026-11-17T03:18:07Z",
+      "updated_at": "2026-11-17T03:18:07Z",
+      "draft": false
+     }
+    ]
+   },
+   "health": [],
+   "days_quiet": 13,
+   "quiet": false,
+   "dormant": false,
+   "charter_missing": false
+  }
+ ],
+ "ideas": []
+}
