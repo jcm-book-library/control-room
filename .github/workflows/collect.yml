@@ -28,25 +28,22 @@ jobs:
         run: python3 tools/collect.py site/data/repos.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Save a copy of the data on the data branch (the weekly health check reads it with git)
+      - name: Write the health report (shown on the dashboard)
+        run: python3 tools/health.py site/data/repos.json site/data/health-latest.md
+      - name: Save a copy of the data and the health report on the data branch (sessions read them with git)
         run: |
           set -e
           D=$(mktemp -d)
-          cp site/data/repos.json "$D/repos.json"
+          cp site/data/repos.json site/data/health-latest.md "$D/"
           cd "$D"
           git init -q -b data
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add repos.json
+          git add repos.json health-latest.md
           git commit -q -m "Repo data $(date -u +%Y-%m-%d)"
           git push -q -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" data
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Include the latest health check, if there is one
-        run: |
-          if [ -f reports/health-latest.md ]; then
-            cp reports/health-latest.md site/data/health-latest.md
-          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
