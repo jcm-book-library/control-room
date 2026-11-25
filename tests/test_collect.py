@@ -84,6 +84,30 @@ class Ideas(unittest.TestCase):
             self.assertIn(q, calls[0])
 
 
+class StandardIssues(unittest.TestCase):
+    def test_open_standard_issues_only_from_control_room_and_no_prs(self):
+        body = [{"title": "Pin fonts", "html_url": "u1", "created_at": "2026-11-01T00:00:00Z", "number": 1},
+                {"title": "A PR", "html_url": "u2", "created_at": "2026-11-02T00:00:00Z", "pull_request": {"url": "x"}}]
+        api, calls = fake_api({"/repos/x/control-room/issues?labels=standard&state=open": (200, body)})
+        with mock.patch.object(collect, "api", api):
+            got = collect.get_standard_issues("x")
+        self.assertEqual(got, [{"title": "Pin fonts", "html_url": "u1", "created_at": "2026-11-01T00:00:00Z"}])
+        self.assertEqual(len(calls), 1)
+
+    def test_failed_call_is_none_and_main_leaves_key_out(self):
+        api, _ = fake_api({})
+        with mock.patch.object(collect, "api", api):
+            self.assertIsNone(collect.get_standard_issues("x"))
+
+    def test_main_writes_key(self):
+        routes = {"/users/x/repos?type=owner&per_page=100&page=1": (200, [REPO]),
+                  "/repos/x/control-room/issues?labels=standard": (200, [{"title": "T", "html_url": "u", "created_at": "d"}])}
+        code, data = Main().run_main(routes)
+        self.assertEqual(data["standard_issues"], [{"title": "T", "html_url": "u", "created_at": "d"}])
+        code, data = Main().run_main({"/users/x/repos?type=owner&per_page=100&page=1": (200, [REPO])})
+        self.assertNotIn("standard_issues", data)
+
+
 class Main(unittest.TestCase):
     def run_main(self, routes):
         api, _ = fake_api(routes)

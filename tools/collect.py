@@ -143,6 +143,16 @@ def get_ideas(owner, owner_type):
     return out
 
 
+def get_standard_issues(owner):
+    """Open issues labelled `standard` in the control-room repo only (pull requests skipped).
+    Returns None if the call failed, so "none open" is never reported by mistake."""
+    d = api("/repos/%s/control-room/issues?labels=standard&state=open&per_page=100" % owner)
+    if d is None:
+        return None
+    return [{"title": i.get("title"), "html_url": i.get("html_url"), "created_at": i.get("created_at")}
+            for i in d if not i.get("pull_request")]
+
+
 def build_repo(org, repo, now):
     name = repo["name"]
     main = get_main(org, name)
@@ -208,6 +218,9 @@ def main():
 
     out = {"generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "owner": OWNER, "owner_type": owner_type,
            "repos": repos, "ideas": ideas}
+    standard_issues = get_standard_issues(OWNER) if owner_type else None
+    if standard_issues is not None:  # key left out when unreadable, so the audit says "not available"
+        out["standard_issues"] = standard_issues
     error = None
     if owner_type is None:
         error = ("Couldn't list repos for %s: GitHub answered HTTP %s. A 404 means it isn't an "
