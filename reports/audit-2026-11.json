@@ -1,0 +1,1563 @@
+{
+ "generated_at": "2026-11-25T04:07:51Z",
+ "standards_version": 1,
+ "repos": [
+  {
+   "repo": "album-tracker",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "pass",
+     "why": null,
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "fail",
+     "why": "build script differs from the template"
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "pass",
+     "why": null
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "Bag-and-Tag",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "README doesn't have the live link; README doesn't say how to test",
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "fail",
+     "why": "build script differs from the template"
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "fail",
+     "why": "no tests in the repo"
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "control-room",
+   "kind": "other",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "README doesn't say how to test",
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "pass",
+     "why": null,
+     "standards": 1
+    },
+    "R5": {
+     "result": "pass",
+     "why": null,
+     "baseline_test": "pass"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A2": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A3": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A4": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A6": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A8": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "not an app"
+    }
+   }
+  },
+  {
+   "repo": "daily-paper",
+   "kind": "other",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "README doesn't have the live link",
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A2": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A3": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A4": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A6": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A8": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "not an app"
+    }
+   }
+  },
+  {
+   "repo": "game-tracker",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "README doesn't say how to test",
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": "existing sheet ids allowed until it moves to Supabase (D5)",
+     "findings": [
+      {
+       "file": "app.html",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "index.html",
+       "kind": "sheet-id",
+       "count": 1
+      }
+     ]
+    },
+    "A1": {
+     "result": "fail",
+     "why": "build script differs from the template"
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "fail",
+     "why": "no tests in the repo"
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "household",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "pass",
+     "why": null,
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "pass",
+     "why": null
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "pass",
+     "why": null
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "investments",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "pass",
+     "why": null,
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "fail",
+     "why": "no build script and the README doesn't explain the build"
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "pass",
+     "why": null
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "my-book-library",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "pass",
+     "why": null,
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "2850 words, over 800",
+     "baseline_test": "pass"
+    },
+    "R7": {
+     "result": "fail",
+     "why": "email address in HANDOVER.md (1), sheet id in app.html (4), sheet id in index.html (4), sheet id in old.html (3)",
+     "findings": [
+      {
+       "file": "HANDOVER.md",
+       "kind": "email",
+       "count": 1
+      },
+      {
+       "file": "app.html",
+       "kind": "sheet-id",
+       "count": 4
+      },
+      {
+       "file": "index.html",
+       "kind": "sheet-id",
+       "count": 4
+      },
+      {
+       "file": "old.html",
+       "kind": "sheet-id",
+       "count": 3
+      }
+     ]
+    },
+    "A1": {
+     "result": "fail",
+     "why": "build script differs from the template"
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "pass",
+     "why": null
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "pass",
+     "why": null
+    },
+    "A9": {
+     "result": "unknown",
+     "why": "uses Supabase but the schema name couldn't be found"
+    }
+   }
+  },
+  {
+   "repo": "my-film-library",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "pass",
+     "why": null,
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "fail",
+     "why": "build script differs from the template"
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "pass",
+     "why": null
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "Pantry-Plate",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "README doesn't have the live link; README doesn't say how to test",
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": "existing sheet ids allowed until it moves to Supabase (D5)",
+     "findings": [
+      {
+       "file": "app.html",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "index.html",
+       "kind": "sheet-id",
+       "count": 1
+      }
+     ]
+    },
+    "A1": {
+     "result": "fail",
+     "why": "build script differs from the template"
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "fail",
+     "why": "no tests in the repo"
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "Personal-budget",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "README doesn't have the live link; README doesn't say how to test",
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "fail",
+     "why": "build script differs from the template"
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "fail",
+     "why": "no tests in the repo"
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "recall-arcade",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "README doesn't have the live link; README doesn't say how to test",
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "fail",
+     "why": "no build script and the README doesn't explain the build"
+    },
+    "A2": {
+     "result": "fail",
+     "why": "missing manifest.webmanifest, icons/favicon-32.png, icons/apple-touch-icon.png, icons/icon-192.png, icons/icon-512.png"
+    },
+    "A3": {
+     "result": "fail",
+     "why": "index.html doesn't declare --bg, --surface, --raise, --line, --fg, --muted in :root"
+    },
+    "A4": {
+     "result": "fail",
+     "why": "no tests in the repo"
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "Sawdust-Soil",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "README doesn't say how to test",
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": "existing sheet ids allowed until it moves to Supabase (D5)",
+     "findings": [
+      {
+       "file": "README.md",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "app.html",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "index.html",
+       "kind": "sheet-id",
+       "count": 1
+      }
+     ]
+    },
+    "A1": {
+     "result": "fail",
+     "why": "build script differs from the template"
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "fail",
+     "why": "no tests in the repo"
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "shopping-list",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "pass",
+     "why": null,
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "fail",
+     "why": "build script differs from the template"
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "pass",
+     "why": null
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "sports-tracker",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "1093 words, over 400; doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "README doesn't have the live link",
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": "existing sheet ids allowed until it moves to Supabase (D5)",
+     "findings": [
+      {
+       "file": "a-league/index.html",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "apps/team-match/index.html",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "apps/tournament/index.html",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "world-cup/index.html",
+       "kind": "sheet-id",
+       "count": 1
+      }
+     ]
+    },
+    "A1": {
+     "result": "fail",
+     "why": "no build script and the README doesn't explain the build"
+    },
+    "A2": {
+     "result": "fail",
+     "why": "missing icons/favicon-32.png"
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "pass",
+     "why": null
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "the-big-move",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "pass"
+    },
+    "R3": {
+     "result": "pass",
+     "why": null,
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "fail",
+     "why": "build script differs from the template"
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "pass",
+     "why": null
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  },
+  {
+   "repo": "the-brain",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "572 words, over 400; doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "README doesn't have the live link",
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "fail",
+     "why": "no build script and the README doesn't explain the build"
+    },
+    "A2": {
+     "result": "fail",
+     "why": "missing manifest.webmanifest, icons/favicon-32.png, icons/apple-touch-icon.png, icons/icon-192.png, icons/icon-512.png"
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "pass",
+     "why": null
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "pass",
+     "why": null
+    },
+    "A9": {
+     "result": "unknown",
+     "why": "uses Supabase but the schema name couldn't be found"
+    }
+   }
+  },
+  {
+   "repo": "travel-app",
+   "kind": "other",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "1600 words, over 400; doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "README doesn't say how to test",
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A2": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A3": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A4": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A6": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A8": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "not an app"
+    }
+   }
+  },
+  {
+   "repo": "travel-planner",
+   "kind": "other",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "1258 words, over 400; doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "no README.md",
+     "baseline_test": "fail"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": null,
+     "findings": []
+    },
+    "A1": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A2": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A3": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A4": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A6": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A8": {
+     "result": "n/a",
+     "why": "not an app"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "not an app"
+    }
+   }
+  },
+  {
+   "repo": "tv-tracker",
+   "kind": "app",
+   "default_branch": "main",
+   "checks": {
+    "R1": {
+     "result": "pass",
+     "why": null
+    },
+    "R2": {
+     "result": "fail",
+     "why": "587 words, over 400; doesn't mention STANDARDS.md; doesn't mention HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R3": {
+     "result": "fail",
+     "why": "README doesn't have the live link",
+     "baseline_test": "pass"
+    },
+    "R4": {
+     "result": "fail",
+     "why": "missing audience, standards",
+     "standards": null
+    },
+    "R5": {
+     "result": "fail",
+     "why": "no HANDOVER.md",
+     "baseline_test": "fail"
+    },
+    "R7": {
+     "result": "pass",
+     "why": "existing sheet ids allowed until it moves to Supabase (D5)",
+     "findings": [
+      {
+       "file": "app.html",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "index.html",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "tests/dashboard.mjs",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "tests/favourites.mjs",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "tests/layout.mjs",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "tests/library.mjs",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "tests/shelf.mjs",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "tests/smoke.mjs",
+       "kind": "sheet-id",
+       "count": 1
+      },
+      {
+       "file": "tests/tools.mjs",
+       "kind": "sheet-id",
+       "count": 1
+      }
+     ]
+    },
+    "A1": {
+     "result": "fail",
+     "why": "build script differs from the template"
+    },
+    "A2": {
+     "result": "pass",
+     "why": null
+    },
+    "A3": {
+     "result": "pass",
+     "why": null
+    },
+    "A4": {
+     "result": "pass",
+     "why": null
+    },
+    "A6": {
+     "result": "pass",
+     "why": null
+    },
+    "A8": {
+     "result": "fail",
+     "why": "not on the shared sign-in yet"
+    },
+    "A9": {
+     "result": "n/a",
+     "why": "doesn't use Supabase"
+    }
+   }
+  }
+ ],
+ "baseline_comparison": {
+  "baseline_taken": "2026-11-16",
+  "rows": {
+   "R1": {
+    "label": "R1 default branch main",
+    "baseline_recorded": true,
+    "baseline_count": 17,
+    "now_count": 20,
+    "now_full_count": 20,
+    "gained": [
+     "shopping-list",
+     "travel-app",
+     "travel-planner"
+    ],
+    "lost": []
+   },
+   "R2": {
+    "label": "R2 CLAUDE.md short, points to the rules",
+    "baseline_recorded": true,
+    "baseline_count": 15,
+    "now_count": 15,
+    "now_full_count": 0,
+    "gained": [],
+    "lost": []
+   },
+   "R3": {
+    "label": "R3 README",
+    "baseline_recorded": true,
+    "baseline_count": 19,
+    "now_count": 19,
+    "now_full_count": 7,
+    "gained": [],
+    "lost": []
+   },
+   "R4": {
+    "label": "R4 charter (project.json) complete",
+    "baseline_recorded": true,
+    "baseline_count": 0,
+    "now_count": 1,
+    "now_full_count": 1,
+    "gained": [
+     "control-room"
+    ],
+    "lost": []
+   },
+   "R5": {
+    "label": "R5 HANDOVER.md",
+    "baseline_recorded": true,
+    "baseline_count": 1,
+    "now_count": 2,
+    "now_full_count": 1,
+    "gained": [
+     "control-room"
+    ],
+    "lost": []
+   },
+   "R7": {
+    "label": "R7 no private data in code",
+    "baseline_recorded": true,
+    "baseline_count": 18,
+    "now_count": 19,
+    "now_full_count": 19,
+    "gained": [
+     "the-brain"
+    ],
+    "lost": []
+   },
+   "A1": {
+    "label": "A1 build script matches template",
+    "baseline_recorded": true,
+    "baseline_count": 0,
+    "now_count": 1,
+    "now_full_count": 1,
+    "gained": [
+     "household"
+    ],
+    "lost": []
+   },
+   "A2": {
+    "label": "A2 home-screen install",
+    "baseline_recorded": true,
+    "baseline_count": 14,
+    "now_count": 13,
+    "now_full_count": 13,
+    "gained": [],
+    "lost": [
+     "sports-tracker"
+    ]
+   },
+   "A3": {
+    "label": "A3 shared colour tokens",
+    "baseline_recorded": true,
+    "baseline_count": 15,
+    "now_count": 15,
+    "now_full_count": 15,
+    "gained": [],
+    "lost": []
+   },
+   "A4": {
+    "label": "A4 tests in the repo",
+    "baseline_recorded": true,
+    "baseline_count": 10,
+    "now_count": 10,
+    "now_full_count": 10,
+    "gained": [],
+    "lost": []
+   },
+   "A6": {
+    "label": "A6 scripts and fonts",
+    "baseline_recorded": false,
+    "baseline_count": null,
+    "now_count": 16,
+    "now_full_count": 16,
+    "gained": [],
+    "lost": []
+   },
+   "A8": {
+    "label": "A8 shared sign-in",
+    "baseline_recorded": true,
+    "baseline_count": 2,
+    "now_count": 2,
+    "now_full_count": 2,
+    "gained": [],
+    "lost": []
+   },
+   "A9": {
+    "label": "A9 owner-only schema",
+    "baseline_recorded": false,
+    "baseline_count": null,
+    "now_count": 0,
+    "now_full_count": 0,
+    "gained": [],
+    "lost": []
+   }
+  },
+  "new_repos": [],
+  "not_in_this_run": []
+ },
+ "standard_issues": [],
+ "not_checked": [
+  "R6 (reference material in docs/)",
+  "R7 (manual part: personal figures)",
+  "A3 (look and font)",
+  "A4 (a test against a fake of the data store)",
+  "A5 (phone first)",
+  "A7 (data on Supabase)",
+  "A10 (left rail, reserved for version 2)",
+  "T1 to T7 (media trackers)",
+  "S1 to S5 (sessions)"
+ ],
+ "standard_issues_note": "Not available yet: the daily run hasn't collected them."
+}

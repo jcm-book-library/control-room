@@ -12,7 +12,7 @@ One place to see every project in `jcm-book-library`.
 - Entertainment: quick links to the five media trackers
 - Needs attention: problems with `main`, new repos without a charter, quiet projects
 - Ideas: issues labelled `idea` in any repo
-- The latest weekly health check
+- The daily health report (needs you, worth a look, good to know)
 
 ## How it updates
 
