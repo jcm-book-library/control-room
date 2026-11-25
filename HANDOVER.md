@@ -29,7 +29,7 @@ Last rewritten: 25 Nov 2026. Rewrite this file at the end of each session; don't
 - Sessions can't call `api.github.com` (403) or reach `jcm-book-library.github.io`. Read dashboard data from the `data` branch with git; public repos clone fine. `audit.py` works that way.
 - Scheduled sessions: no connectors, no `add_repo`, no session tools; they can't push.
 - A new session starts from `main`, so a handover only helps once its PR is merged.
-- Our Library is at `ourlibrary.au` and keeps a separate sign-in (D6). Its `HANDOVER.md` is 2,850 words (D7: trim) and has an `@ourlibrary.au` address in it: owner to say whether it's public.
+- Our Library is at `ourlibrary.au` and keeps a separate sign-in (D6). Its `HANDOVER.md` is 2,850 words (D7: trim). The `@ourlibrary.au` address in it is a public contact: leave it (owner, 25 Nov).
 - A9 can't find the Supabase schema name in `my-book-library` and `the-brain`; check by hand.
 - Recall Arcade's handover is `docs/HANDOVER.md`, not at the top level.
 - Never put the owner's email, Google project ids, or session titles and summaries in this public repo.
