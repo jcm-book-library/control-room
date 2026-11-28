@@ -10,6 +10,8 @@ Shared rules for every repo in `jcm-book-library`. What each repo and app should
 
 ## 1. Google Sheet safety (non-negotiable)
 
+Apps whose data lives in Supabase (travel-planner, travel-app) don't use a sheet; section 1A applies to them instead.
+
 Most apps read and write a Google Sheet. The sheet is the real data; the app and the browser copy are not.
 
 - **Stay in your lane.** Each app owns only the tabs listed in its `CLAUDE.md` or README, usually marked with its emoji (📺, 🎥, 🎮, 🎸 …). Never read or write another app's tabs. In the shared "Entertainment Tracker" sheet, never touch Books, Reading Log, App Settings, Ratings, Contents, Wishlist, Calibre Review or any backup tab unless you are working in `my-book-library`.
@@ -22,6 +24,17 @@ Most apps read and write a Google Sheet. The sheet is the real data; the app and
 - **Check afterwards.** After any bulk change, read the tab back and compare it with a script. Never hand-type long arrays into tool calls.
 - **Only the lead session writes.** Subagents never write to a sheet. Show the owner the plan before the first write of a session.
 - **Keep links private.** Sheet links and ids go in the owner's settings (in the sheet or the browser), not in public code, unless that repo already documents otherwise. All sheets are set to Restricted.
+
+## 1A. Supabase apps
+
+For travel-planner and travel-app (Travel Companion). They share one free Supabase project.
+
+- **Row Level Security** on every table, no exceptions.
+- **Schema changes only as numbered SQL files** in the repo. travel-app owns the shared tables in `supabase/migrations/`; travel-planner keeps planner-only tables in `supabase/planner/`. Never change a table by hand in the dashboard without writing the SQL file.
+- **Every row** has a uuid `id`, `created_at`, `updated_at`, `updated_by` and `deleted_at` (soft delete).
+- **Keys.** The Supabase URL and anon key may be in code or build settings. The service-role key never goes in a repo or app.
+- **Test first.** Run the SQL on a throwaway local Postgres, including a two-user privacy check, before asking the owner to run it.
+- **Free tier watch:** 500 MB database, projects pause after 7 days unused. Flag anything that could cost money.
 
 ## 2. Branches and pull requests
 
@@ -65,7 +78,7 @@ Most apps share one shape. Start new ones from `control-room/templates/`.
 - **Scripts** only from cdnjs (pinned versions), fonts only from Google Fonts, everything else inline.
 - **Google sign-in on Pages** reuses the book app's OAuth Client ID (saved in the browser as `mbl_config`). Each app keeps its own localStorage keys with its own prefix.
 - **Testing:** headless Playwright with Chromium at `/opt/pw-browsers/chromium` and a stubbed `window.claude`, at 390px and 1280px wide, before every publish. No sideways scrolling.
-- Apps with a different build (recall-arcade on Vite, daily-paper and investments built by Actions) keep their own setup and say so in their README.
+- Apps with a different build (recall-arcade on Vite, travel-planner and travel-app on Vite published by a GitHub Action, daily-paper and investments built by Actions) keep their own setup and say so in their README.
 
 ## 5. Charter: `project.json`
 
